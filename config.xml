@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<widget xmlns="http://www.samsung.com/">  
+  <cpname itemtype="string"/>  
+  <cplogo itemtype="string"/>  
+  <cpauthjs itemtype="string"/>  
+  <ThumbIcon itemtype="string"/> 
+  <mouse>y</mouse> 
+  <BigThumbIcon itemtype="string"/>  
+  <ListIcon itemtype="string"/>  
+  <BigListIcon itemtype="string"/>  
+  <category itemtype="string"/>  
+  <autoUpdate itemtype="boolean">n</autoUpdate>  
+  <ver itemtype="string">0.100</ver>  
+  <mgrver itemtype="string"/>  
+  <fullwidget itemtype="boolean">y</fullwidget>  
+  <type itemtype="string">user</type>  
+  <srcctl itemtype="boolean">y</srcctl>  
+  <ticker itemtype="boolean">n</ticker>  
+  <childlock itemtype="boolean">n</childlock>  
+  <videomute itemtype="boolean">n</videomute>  
+  <dcont itemtype="boolean">y</dcont>  
+  <widgetname itemtype="string">Popcorn Time</widgetname>  
+  <description itemtype="string"/>  
+  <width itemtype="string">1920</width>  
+  <height itemtype="string">1080</height>  
+  <author itemtype="group"> 
+    <name itemtype="string"></name>  
+    <email itemtype="string"/>  
+    <link itemtype="string"/>  
+    <organization itemtype="string"/> 
+  </author> 
+</widget>
