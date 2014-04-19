@@ -1,7 +1,7 @@
 popcorntime-smarttv
 ===================
 
-Version of Popcorn time for Samsung SmartTv
+Version of [Popcorntime](https://github.com/popcorn-official/popcorn-app) for Samsung SmartTv
 
 #Documentation TODOS
 
