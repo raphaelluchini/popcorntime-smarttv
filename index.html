@@ -46,15 +46,15 @@
 	    <div id="changelog-container"></div>
 	
 	    <script id="changelog-tpl" type="text/x-template">
-        <a class="btn-close"><img src="app/images/close.svg" width="50" /></a>
-        <h1><%= title %></h1>
-        <h3><%= description %></h3>
-        <ul>
-        <% for(var i = 0; i < changeLog.length; i++) { %>
-          <li><%= changeLog[i] %></li>
-        <% } %>
-        </ul>
-    </script>
+        	<a class="btn-close"><i class="fa fa-times"></i></a>
+        	<h1><%= title %></h1>
+        	<h3><%= description %></h3>
+        	<ul>
+        	<% for(var i = 0; i < changeLog.length; i++) { %>
+        	<li><%= changeLog[i] %></li>
+        	<% } %>
+        	</ul>
+    	</script>
 	
 	    <div id="catalog-select">
 	      <div class="search">
@@ -78,7 +78,7 @@
         <div class="backdrop-image" style="background-image:url(<%= this.model.get('backdrop') %>);"></div>
 
         <div class="movie-detail">
-          <div class="closer"><img src="app/images/close.svg" width="50"></div>
+          <div class="closer"><i class="fa fa-times"></i></div>
           <div class="poster-cont">
             <div class="poster-inner">
               <div class="poster">
@@ -175,7 +175,7 @@
 	        <div class="progressbar"><div class="progress"></div></div>
 	        <div class="progressinfo"></div>
 	      </div>
-	      <a href="javascript:;" class="btn-close"><img src="app/images/close.svg" width="50" /></a>
+	      <a href="javascript:;" class="btn-close"><i class="fa fa-times"></i></a>
 	    </div>
 	
 	    <div id="video-container"></div>
@@ -231,7 +231,7 @@
 	
 	
 	    <!-- Backbone Views and Controllers -->
-	    <script src="app/js/frontend/views/page.js"></script>
+	   	<script src="app/js/frontend/views/page.js"></script>
 	    <script src="app/js/frontend/views/listview.js"></script>
 	    <script src="app/js/frontend/views/movie.js"></script>
 	    <script src="app/js/frontend/views/sidebar.js"></script>
@@ -240,7 +240,7 @@
 	    <script src="app/js/frontend/controllers/filter.js"></script>
 	    <script src="app/js/frontend/router.js"></script>
 	
-	    <script src="app/js/vendor/video-js/video.dev.js"></script>
+	   	<script src="app/js/vendor/video-js/video.dev.js"></script>
 	    <script src="app/js/vendor/videojsplugins.js"></script>
 	    <script type="text/javascript">
 	    	App.Router.navigate('index.html', { trigger: true });
