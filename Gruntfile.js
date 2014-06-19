@@ -42,7 +42,6 @@ module.exports = function(grunt) {
   
   var filesCSS = ['app/css/font-awesome.min.css',
                   'app/css/animations.css',
-                  'app/css/main.css',
                   'app/css/app.css',
                   'app/js/vendor/video-js/video-js.css'];
   // Project configuration.

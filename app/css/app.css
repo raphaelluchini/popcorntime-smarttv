@@ -94,8 +94,26 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
   }
 }
 
+/* Layout */
+video {
+  width: 200px;
+  height: 112px;
+  border: 1px solid black;
+}
+
+.video-container {
+  display: inline-block;
+  text-align: center;
+}
+
+p {
+  font: 14px Arial;
+}
+
 body {
   -webkit-user-select: none;
+  width: 1920px;
+  height: 1080px;
 }
 
 button {
