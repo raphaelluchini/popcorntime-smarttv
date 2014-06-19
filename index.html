@@ -2,21 +2,12 @@
 <html>
 	<head>
 		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-		<title>Hellotv</title>
+		<title>Popcorntime-smarttv</title>
 
-		<!-- TODO : Common API -->
-		<script type="text/javascript" language="javascript" src="$MANAGER_WIDGET/Common/API/Widget.js"></script>
-		<script type="text/javascript" language="javascript" src="$MANAGER_WIDGET/Common/API/TVKeyValue.js"></script>
+		<script type="text/javascript" src="$MANAGER_WIDGET/Common/API/Widget.js"></script>
+		<script type="text/javascript" src="$MANAGER_WIDGET/Common/API/TVKeyValue.js"></script>
 
-		<!-- TODO : Javascript code -->
-		<script language="javascript" type="text/javascript" src="app/js/Main.js"></script>
-
-		<!-- TODO : Style sheets code -->
-		<link rel="stylesheet" href="app/css/Main.css" type="text/css">
-
-		<!-- TODO: Plugins -->
-		<link rel="stylesheet" type="text/css" href="app/css/app.css">
-    	<link rel="stylesheet" type="text/css" href="app/js/vendor/video-js/video-js.css">
+		<link rel="stylesheet" type="text/css" href="styles.css">
 	</head>
 
 	<body onload="Main.onLoad();" onunload="Main.onUnload();">
@@ -198,50 +189,8 @@
 		      };
 		    }();
 	    </script>		
-		<script src="app/js/vendor/jquery-2.1.0.min.js"></script>
-	    <script src="app/js/vendor/underscore.js"></script>
-	    <script src="app/js/vendor/backbone-1.1.0.js"></script>
-	    <script src="app/js/vendor/marionette.1.6.4.js"></script>
-	    <script src="app/js/vendor/bootstrap-tooltip.min.js"></script>
-	    <script src="app/js/vendor/q.js"></script>
-	    <script src="app/js/vendor/async.js"></script>
-	    <script src="app/js/vendor/URI.js"></script>
-	
-	    <!-- Settings Module and API Keys -->
-	    <script src="app/js/vendor/settings.js"></script>
-	
-	    <!-- App Initialization -->
-	    <script src="app/js/app.js"></script>
-	    <!-- <script src="app/js/updater.js"></script> -->
-	    <script src="app/js/language.js"></script>
-	
-	    <!-- UI and UI-related Initialization -->
-	    <script src="app/js/frontend/ui.js"></script>
-	    <script src="app/js/frontend/player.js"></script>
-	
-	    <!-- Backbone Models -->
-	    <script src="app/js/frontend/models/movie.js"></script>
-	
-	    <!-- Data Sources-->
-	    <script src="app/js/frontend/providers/cache.js"></script>
-	    <script src="app/js/frontend/providers/ysubs.js"></script>
-	    <script src="app/js/frontend/providers/trakttv.js"></script> 
-	    <script src="app/js/frontend/scrapers/yts.js"></script>
-	    <script src="app/js/frontend/scrapers/scrapers.js"></script> 
-	
-	
-	    <!-- Backbone Views and Controllers -->
-	   	<script src="app/js/frontend/views/page.js"></script>
-	    <script src="app/js/frontend/views/listview.js"></script>
-	    <script src="app/js/frontend/views/movie.js"></script>
-	    <script src="app/js/frontend/views/sidebar.js"></script>
-	    <script src="app/js/frontend/controllers/home.js"></script>
-	    <script src="app/js/frontend/controllers/search.js"></script>
-	    <script src="app/js/frontend/controllers/filter.js"></script>
-	    <script src="app/js/frontend/router.js"></script>
-	
-	   	<script src="app/js/vendor/video-js/video.dev.js"></script>
-	    <script src="app/js/vendor/videojsplugins.js"></script>
+		<script src="popcorntime-smarttv.js"></script>
+	    
 	    <script type="text/javascript">
 	    	App.Router.navigate('index.html', { trigger: true });
 	    </script>
