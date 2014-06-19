@@ -1,5 +1,6 @@
 module.exports = function(grunt) {
-  var files = [
+  var filesJS = [
+    "app/js/Main.js",
     "app/js/vendor/jquery-2.1.0.min.js",
     "app/js/vendor/underscore.js",
     "app/js/vendor/backbone-1.1.0.js",
@@ -38,13 +39,18 @@ module.exports = function(grunt) {
     "app/js/vendor/video-js/video.dev.js",
     "app/js/vendor/videojsplugins.js",
   ];
-
+  
+  var filesCSS = ['app/css/font-awesome.min.css',
+                  'app/css/animations.css',
+                  'app/css/main.css',
+                  'app/css/app.css',
+                  'app/js/vendor/video-js/video-js.css'];
   // Project configuration.
   grunt.initConfig({
     pkg: grunt.file.readJSON('package.json'),
     watch: {
       scripts: {
-        files: [files, 'app/css/**/*.css'],
+        files: [filesJS, filesCSS],
         tasks: ['concat']
       },
     },
@@ -54,11 +60,11 @@ module.exports = function(grunt) {
         separator: ';'
       },
       css: {
-        src:['app/css/*.css'],
+        src: filesCSS,
         dest:'styles.css'
       },
       js: {
-          src: files,
+          src: filesJS,
           dest: '<%= pkg.name %>.js'
         }
     },
