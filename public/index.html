@@ -1,0 +1,133 @@
+<!doctype html>
+<html class="no-js ui-mobile-rendering" lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+
+    <title>Popcorn time SmartTv</title>
+    <meta name="description" content="Marionette and Require.js Boilerplate Library">
+    <meta name="viewport" content="user-scalable=no, initial-scale=1.0, maximum-scale=1.0, width=device-width">
+    <script src="//cdnjs.cloudflare.com/ajax/libs/URI.js/1.7.2/URI.min.js"></script>
+    <!--Detect if the browser is a mobile browser or a desktop browser and conditionally include your JavaScript -->
+    <script>
+
+        // Mobile/Desktop Detection script
+        (function(ua, w, d, undefined) {
+
+            // App Environment
+            // ---------------
+            //  Tip: Set to true to turn on "production" mode
+            var production = true,
+                    filesToLoad,
+            //BoilerplateMVC Helper Methods
+                    boilerplateMVC = {
+                        loadCSS: function(url, callback) {
+                            var link = d.createElement("link");
+                            link.type = "text/css";
+                            link.rel = "stylesheet";
+                            link.href = url;
+                            d.getElementsByTagName("head")[0].appendChild(link);
+                            if(callback) {
+                                callback();
+                            }
+                        },
+                        loadJS: function(file, callback) {
+                            var script = d.createElement("script");
+                            script.type = "text/javascript";
+                            if (script.readyState) {  // IE
+                                script.onreadystatechange = function() {
+                                    if (script.readyState == "loaded" || script.readyState == "complete") {
+                                        script.onreadystatechange = null;
+                                        callback();
+                                    }
+                                };
+                            } else {  // Other Browsers
+                                script.onload = function() {
+                                    callback();
+                                };
+                            }
+                            if(((typeof file).toLowerCase()) === "object" && file["data-main"] !== undefined) {
+                                script.setAttribute("data-main", file["data-main"]);
+                                script.async = true;
+                                script.src = file.src;
+                            } else {
+                                script.src = file;
+                            }
+                            d.getElementsByTagName("head")[0].appendChild(script);
+                        },
+                        loadFiles: function(production, obj, callback) {
+                            var self = this;
+                            if(production) {
+                                // Loads the production CSS file(s)
+                                self.loadCSS(obj["prod-css"], function() {
+                                    // If there are production JavaScript files to load
+                                    if(obj["prod-js"]) {
+                                        // Loads the correct initialization file (which includes Almond.js)
+                                        self.loadJS(obj["prod-js"], callback);
+                                    }
+                                });
+
+                                self.loadCSS(obj["animations"]);
+                                self.loadCSS(obj["app"]);
+                                self.loadCSS(obj["fa"]);
+
+                            } else {
+                                // Loads the development CSS file(s)
+                                self.loadCSS(obj["dev-css"], function() {
+                                    // If there are development Javascript files to load
+                                    if(obj["dev-js"]) {
+                                        // Loads Require.js and tells Require.js to find the correct intialization file
+                                        self.loadJS(obj["dev-js"], callback);
+                                    }
+                                });
+                            }
+                        }
+                    };
+            // Desktop CSS and JavaScript files to load
+            filesToLoad = {
+                // CSS file that is loaded when in development mode
+                "animations": "css/animations.css",
+                "app": "css/app.css",
+                "fa": "css/font-awesome.min.css",
+                "dev-css": "css/desktop.css",
+                // CSS file that is loaded when in production mode
+                "prod-css": "css/desktop.min.css",
+                // Require.js configuration file that is also loaded when in development mode
+                "dev-js": { "data-main": "js/app/config/config.js", "src": "js/libs/require.js" },
+                // JavaScript initialization file that is loaded when in development mode
+                "dev-init": "js/app/init/DesktopInit.js",
+                // JavaScript file that is loaded when in production mode
+                "prod-init": "js/app/init/DesktopInit.min.js",
+                "prod-js": { "data-main": "js/app/config/config.js", "src": "js/libs/require.js" }
+            };
+
+            boilerplateMVC.loadFiles(production, filesToLoad, function() {
+                if(!production && window.require) {
+                    require([filesToLoad["dev-init"]]);
+                } else if ( production ) {
+                    require([filesToLoad["prod-init"]])
+                }
+            });
+
+        })(navigator.userAgent || navigator.vendor || window.opera, window, document);
+
+    </script>
+
+</head>
+<body>
+
+<div data-role="page">
+
+    <header id="header"><h1>Popcorn Time</h1></header>
+
+    <div id="catalog-select"></div>
+    
+    <section id="main" class="container">
+      
+    </section>
+</div>
+
+</body>
+</html>
+
+

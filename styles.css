@@ -164,6 +164,8 @@ body {
   -webkit-user-select: none;
   width: 1920px;
   height: 1080px;
+  margin:0;
+  padding:0;
 }
 
 button {
@@ -641,7 +643,7 @@ a {
   -webkit-overflow-scrolling: touch;
   width: 180px;
   position: absolute;
-  top: 45px;
+  /*top: 45px;*/
   padding: 20px;
   height: 100%;
   background: #121212;
@@ -690,6 +692,9 @@ a {
   color: #404040;
   font-weight: bold;
   margin-bottom: 10px;
+}
+#catalog-select ul{
+    padding:0;
 }
 #catalog-select ul li {
   display: block;
@@ -2095,7 +2100,7 @@ body.watching #header, body.watching #notification, body.watching #catalog-selec
 .torrent-health.excellent {
   background: green;
 }
-
+/*
 .content {
   float: left;
   margin-left: 30px;
@@ -2118,7 +2123,7 @@ body.watching #header, body.watching #notification, body.watching #catalog-selec
   font-family: 'Helvetica Neue', sans-serif;
   font-size: 18px;
   margin-bottom: 20px;
-}
+}*/
 
 /*
 -- Don't find any of this properties anywhere in the popcorn-app */
