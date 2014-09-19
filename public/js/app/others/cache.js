@@ -1,5 +1,5 @@
- define(['Q'],
-    function(Q) {
+ define(['backbone','Q'],
+    function(_, Q) {
         //var db = openDatabase('cachedb', '', 'Cache database', 50 * 1024 * 1024);
 
         var Cache = {

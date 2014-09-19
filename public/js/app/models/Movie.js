@@ -1,5 +1,5 @@
-define(["backbone"],
-    function(Backbone) {
+define(["underscore","backbone"],
+    function(_, Backbone) {
         // Creates a new Backbone Model class object
         var Movie = Backbone.Model.extend({
           buildBasicView: function () {
@@ -8,11 +8,6 @@ define(["backbone"],
             // This is mostly used for reporting
             model.set('slug',       model.get('title').toLowerCase().replace(/[^\w ]+/g,'').replace(/ +/g,'_') +'.'+ model.get('imdb').slice(2) );
             model.set('niceTitle',  model.get('title') +' ('+model.get('year')+')' );
-
-            model.view = new App.View.MovieListItem({
-                model: model
-            });
-
           },
 
           getShortTitle: function() {
@@ -24,7 +19,7 @@ define(["backbone"],
           },
 
           initialize: function () {
-              //this.buildBasicView();
+              this.buildBasicView();
               this.calculateTorrentHealth();
           },
 

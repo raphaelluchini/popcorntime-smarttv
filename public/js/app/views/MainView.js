@@ -1,11 +1,18 @@
-define( ['App', 'backbone', 'marionette', 'jquery', 'hbs!templates/main', 'models/Model'],
-    function(App, Backbone, Marionette, $, template, Model) {
-        //App.Scrapers.addMovie({});
+define( ['App', 'backbone', 'marionette', 'jquery', 'hbs!templates/main', 'views/MovieView', 'others/Scrapers'],
+    function(App, Backbone, Marionette, $, template, MovieView, Scrapers) {
+        var scrapers = new Scrapers([], {
+            keywords: null,
+            genre: 'all',
+            page: null
+        });
 
-        return Backbone.Marionette.ItemView.extend( {
-            template: template,
-            model: new Model({
-                movies:['Bla', 'bla']
-            })
+        return Backbone.Marionette.CompositeView.extend( {
+            template:template,
+            childViewContainer:'#list',
+            collection:scrapers,
+            childView:MovieView,
+            initialize : function () {
+                this.collection.fetch();
+            },
         });
     });

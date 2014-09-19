@@ -1,37 +1,42 @@
 {
-    "name":"Marionette-Require-Boilerplate",
-    "title":"Marionette and Require Boilerplate",
-    "description":"A Marionette.js and Require.js Boilerplate that promotes decoupling your JavaScript into modules, separating business logic from application logic using Models and Views, organizing your application into Regions with default build-up/tear-down logic for you Views, reusing your JavaScript between Desktop and Mobile Web versions, including non-AMD Compatible Third Party Scripts in your project, and optimizing all of your JavaScript (minify, concatenate, etc).",
-    "version":"1.1.0",
-    "homepage":"https://github.com/BoilerplateMVC/Marionette-Require-Boilerplate",
-    "author":{
-        "name":"Brett Jones",
-        "email":"brettjonesdev@gmail.com",
-        "url":"http://www.brettjonesdev.com"
-    },
-    "repository":{
-        "type":"git",
-        "url":"git@github.com:BoilerplateMVC/Marionette-Require-Boilerplate.git"
-    },
-    "bugs":{
-        "url":"https://github.com/BoilerplateMVC/Marionette-Require-Boilerplate/issues"
-    },
-    "licenses":[
-        {
-            "type":"MIT",
-            "url":"https://github.com/BoilerplateMVC/Marionette-Require-Boilerplate/blob/master/LICENSE-MIT"
-        }
-    ],
-    "dependencies":{
-        "express":"3.x"
-    },
-    "devDependencies":{
-        "express":"3.x",
-        "grunt":"~0.4.1",
-        "grunt-contrib-requirejs":"~0.4.0",
-        "grunt-contrib-jshint":"~0.3.0",
-        "uglify-js":"~2.2.5"
-    },
-    "main":"./server/server",
-    "keywords":["Marionette.js", "Backbone.js", "Require.js", "Marionette and Require Boilerplate"]
+  "name": "PopcornTimeSmartTv",
+  "title": "PopcornTime SmartTv",
+  "description": "A fork of PopcornTime for Smarttvs",
+  "version": "0.1.1",
+  "homepage": "https://github.com/raphaelluchini/popcorntime-smarttv",
+  "author": {
+    "name": "Raphael Luchini",
+    "email": "laster.raphael@gmail.com"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/raphaelluchini/popcorntime-smarttv.git"
+  },
+  "bugs": {
+    "url": "https://github.com/raphaelluchini/popcorntime-smarttv/issues"
+  },
+  "licenses": [
+    {
+      "type": "MIT",
+      "url": "https://github.com/BoilerplateMVC/Marionette-Require-Boilerplate/blob/master/LICENSE-MIT"
+    }
+  ],
+  "dependencies": {
+    
+  },
+  "devDependencies": {
+    "express": "3.x",
+    "grunt": "~0.4.1",
+    "grunt-contrib-jshint": "~0.3.0",
+    "grunt-contrib-requirejs": "~0.4.0",
+    "uglify-js": "~2.2.5"
+  },
+  "main": "./server/server",
+  "keywords": [
+    "Marionette.js",
+    "Backbone.js",
+    "Require.js",
+    "popcorntime",
+    "smarttv"
+  ]
 }

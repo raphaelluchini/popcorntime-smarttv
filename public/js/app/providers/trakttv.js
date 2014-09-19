@@ -16,7 +16,7 @@ define(['jquery'],
 				url: options.uri || options.url
 			}
 			if(options.json)
-				jqueryOptions.dataType = 'json';
+				jqueryOptions.dataType = 'jsonp';
 			if(options.headers)
 				jqueryOptions.headers = options.headers;
 			if(options.method)
@@ -61,7 +61,7 @@ define(['jquery'],
 
 			console.debug('Requesting from Trakt.tv: %s', uri.toString());
 			console.time('Trakt.tv Request Took');
-			request(uri.toString(), {json: true}, function(err, res, body) {
+			request(uri.toString(), {json: true, crossDomain:true}, function(err, res, body) {
 				console.timeEnd('Trakt.tv Request Took');
 				callback(body);
 			});
