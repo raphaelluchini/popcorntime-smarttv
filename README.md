@@ -3,6 +3,13 @@ popcorntime-smarttv
 
 Version of [Popcorntime](https://github.com/popcorn-official/popcorn-app) for Samsung SmartTv
 
+#Scope
+For the best UX and performace for smartvs we need a very organized and clean code, using some tools and making some code refactors, we are be able to push this app foward pretty fast! That's why I'm not responding the issues for while, Sorry!
+
+#Notes
+- New Frontend code refactored comming soon! Please, wait the next version for bugs reports!
+- Any suggestion, feel free to ask me!
+
 #Getting Started
 
 - [How to Install on my TV](https://www.samsungdforum.com/Guide/art00013/index.html#packaging-applications-for-upload)
@@ -23,7 +30,7 @@ Version of [Popcorntime](https://github.com/popcorn-official/popcorn-app) for Sa
 - Add Subtitles
 - Performace improvements
 - Auto/Manual node server selector using UI elements
-- Popcorntime code refactor
+- Popcorntime code refactor(Soon)
 - Popcorntime bugfixes
 - Add back button
 - Remove animations
