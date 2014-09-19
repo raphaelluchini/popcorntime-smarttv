@@ -4,7 +4,7 @@ define(["underscore","backbone"],
         var Movie = Backbone.Model.extend({
           buildBasicView: function () {
             var model = this;
-
+            model.id = model.get('imdb');
             // This is mostly used for reporting
             model.set('slug',       model.get('title').toLowerCase().replace(/[^\w ]+/g,'').replace(/ +/g,'_') +'.'+ model.get('imdb').slice(2) );
             model.set('niceTitle',  model.get('title') +' ('+model.get('year')+')' );

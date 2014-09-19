@@ -1384,7 +1384,8 @@ body.has-notification #notification {
   color: #fff;
 }
 
-sidebar {
+.sidebar {
+  top:0;
   right: 0;
   position: absolute;
   height: 100%;
@@ -1395,13 +1396,13 @@ sidebar {
   -webkit-animation: sidebareffect .5s;
   -webkit-transform: translateZ(0);
 }
-sidebar.hidden {
+.sidebar.hidden {
   right: -10px;
   animation: sidebareffect2 .5s;
   -webkit-animation: sidebareffect2 .5s;
   -webkit-transform: translate(100%, 0);
 }
-sidebar .closer {
+.sidebar .closer {
   position: absolute;
   top: 0;
   left: 0;
@@ -1410,10 +1411,10 @@ sidebar .closer {
   z-index: 300;
   cursor: pointer;
 }
-sidebar .closer:hover i {
+.sidebar .closer:hover i {
   opacity: 1;
 }
-sidebar .closer i {
+.sidebar .closer i {
   color: #fff;
   position: absolute;
   left: 8px;
@@ -1422,7 +1423,7 @@ sidebar .closer i {
   text-shadow: 0 0 5px #000;
 }
 
-sidebar .play {
+.sidebar .play {
   overflow-x: hidden;
   overflow-y: overlay;
   -webkit-overflow-scrolling: touch;
@@ -1435,49 +1436,48 @@ sidebar .play {
   top: 0;
   z-index: 100;
   background-size: cover;
-  position: relative;
 }
-sidebar .play::-webkit-scrollbar {
+.sidebar .play::-webkit-scrollbar {
   background: none;
   width: 9px;
 }
-sidebar .play::-webkit-scrollbar-button {
+.sidebar .play::-webkit-scrollbar-button {
   display: none;
 }
-sidebar .play::-webkit-scrollbar-track {
+.sidebar .play::-webkit-scrollbar-track {
   display: none;
 }
-sidebar .play::-webkit-scrollbar-track-piece {
+.sidebar .play::-webkit-scrollbar-track-piece {
   display: none;
 }
-sidebar .play::-webkit-scrollbar-thumb {
+.sidebar .play::-webkit-scrollbar-thumb {
   background: rgba(0, 0, 0, 0);
   background-clip: content-box;
   border-radius: 10px;
   border: 2px solid transparent;
 }
-sidebar .play::-webkit-scrollbar-corner {
+.sidebar .play::-webkit-scrollbar-corner {
   display: none;
 }
-sidebar .play::-webkit-resizer {
+.sidebar .play::-webkit-resizer {
   display: none;
 }
-sidebar .play:hover::-webkit-scrollbar-thumb {
+.sidebar .play:hover::-webkit-scrollbar-thumb {
   background: rgba(0, 0, 0, 0.5);
   background-clip: content-box;
   border-radius: 10px;
   border: 1px solid rgba(255, 255, 255, 0.15);
 }
-sidebar .play:hover::-webkit-scrollbar-thumb:hover {
+.sidebar .play:hover::-webkit-scrollbar-thumb:hover {
   background: rgba(0, 0, 0, 0.6);
   background-clip: content-box;
   border-radius: 10px;
   border: 1px solid rgba(255, 255, 255, 0.2);
 }
-sidebar .play:hover a.play-over {
+.sidebar .play:hover a.play-over {
   display: block;
 }
-sidebar .play .backdrop-image {
+.sidebar .play .backdrop-image {
   filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=0);
   opacity: 0;
   display: block;
@@ -1490,10 +1490,10 @@ sidebar .play .backdrop-image {
   z-index: -1;
   background-position: center;
 }
-sidebar .play .loaded {
+.sidebar .play .loaded {
   -webkit-animation: backdropFadeIn .5s ease-in forwards;
 }
-sidebar .play a.play-over {
+.sidebar .play a.play-over {
   position: absolute;
   top: 40%;
   padding: 10px 20px;
@@ -1506,7 +1506,7 @@ sidebar .play a.play-over {
   display: none;
   z-index: 10;
 }
-sidebar .play .poster {
+.sidebar .play .poster {
   display: block;
   width: 100%;
   padding-bottom: 150%;
@@ -1519,7 +1519,7 @@ sidebar .play .poster {
   background-size: cover;
   -webkit-transform: translateZ(0);
 }
-sidebar .play .poster img.big-poster {
+.sidebar .play .poster img.big-poster {
   display: block;
   position: absolute;
   top: 0;
@@ -1528,7 +1528,7 @@ sidebar .play .poster img.big-poster {
   height: 100%;
   border-radius: 4px;
 }
-sidebar .play a.play-button {
+.sidebar .play a.play-button {
   text-align: center;
   color: #FFF;
   font-weight: bold;
@@ -1542,19 +1542,19 @@ sidebar .play a.play-button {
   text-shadow: 0 1px 1px rgba(0, 0, 0, 0.4);
   background: #cc181e;
 }
-sidebar .play a.play-button:hover {
+.sidebar .play a.play-button:hover {
   background: #eb282e;
 }
-sidebar .play .movie-detail {
+.sidebar .play .movie-detail {
   height: 100%;
   display: table;
 }
-sidebar .play .movie-detail .poster-cont,
-sidebar .play .movie-detail .side-content {
+.sidebar .play .movie-detail .poster-cont,
+.sidebar .play .movie-detail .side-content {
   display: table-cell;
   vertical-align: middle;
 }
-sidebar .play .movie-detail .poster-cont {
+.sidebar .play .movie-detail .poster-cont {
   position: relative;
   width: 40%;
   height: 100%;
@@ -1563,26 +1563,26 @@ sidebar .play .movie-detail .poster-cont {
   -webkit-box-sizing: border-box;
   box-sizing: border-box;
 }
-sidebar .play .movie-detail .poster-cont:hover .movie-config {
+.sidebar .play .movie-detail .poster-cont:hover .movie-config {
   bottom: 2px;
 }
-sidebar .play .movie-detail .poster-cont .poster-inner {
+.sidebar .play .movie-detail .poster-cont .poster-inner {
   position: relative;
 }
-sidebar .play .movie-detail .poster-cont img.big-poster {
+.sidebar .play .movie-detail .poster-cont img.big-poster {
   background: #000;
   width: 100%;
   box-shadow: 0 2px 3px rgba(0, 0, 0, 0.4);
   border-radius: 4px;
   vertical-align: bottom;
 }
-sidebar .play .movie-detail .poster-cont .movie-config h4 {
+.sidebar .play .movie-detail .poster-cont .movie-config h4 {
   font-weight: bold;
   font-size: 14px;
   margin-left: 10px;
   margin-top: 8px;
 }
-sidebar .play .movie-detail .poster-cont .movie-config .quality-cont {
+.sidebar .play .movie-detail .poster-cont .movie-config .quality-cont {
   position: absolute;
   bottom: 0;
   left: 0;
@@ -1593,36 +1593,36 @@ sidebar .play .movie-detail .poster-cont .movie-config .quality-cont {
   background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.85) 100%);
   -webkit-transform: translateZ(0);
 }
-sidebar .play .movie-detail .poster-cont .movie-config .quality-cont .quality-off {
+.sidebar .play .movie-detail .poster-cont .movie-config .quality-cont .quality-off {
   margin-left: 10px;
   font-size: 12px;
 }
-sidebar .play .movie-detail .poster-cont .movie-config li.options span.extra-data {
+.sidebar .play .movie-detail .poster-cont .movie-config li.options span.extra-data {
   font-weight: bold;
   color: #FFF;
   float: right;
   font-size: 15px;
 }
-sidebar .play .movie-detail .poster-cont .movie-config li.options span.good {
+.sidebar .play .movie-detail .poster-cont .movie-config li.options span.good {
   color: #27ae60;
 }
-sidebar .play .movie-detail .poster-cont .movie-config li.options span.bad {
+.sidebar .play .movie-detail .poster-cont .movie-config li.options span.bad {
   color: #c0392b;
 }
-sidebar .play .movie-detail .poster-cont .movie-config li.options span.epic {
+.sidebar .play .movie-detail .poster-cont .movie-config li.options span.epic {
   color: #8e44ad;
 }
-sidebar .play .movie-detail .poster-cont .movie-config input {
+.sidebar .play .movie-detail .poster-cont .movie-config input {
   font-family: inherit;
   font-size: 100%;
   line-height: normal;
   margin: 0;
 }
-sidebar .play .movie-detail .poster-cont .movie-config input[type="radio"] {
+.sidebar .play .movie-detail .poster-cont .movie-config input[type="radio"] {
   box-sizing: border-box;
   padding: 0;
 }
-sidebar .play .movie-detail .poster-cont .movie-config .switch {
+.sidebar .play .movie-detail .poster-cont .movie-config .switch {
   background: transparent;
   border-radius: 32px;
   display: block;
@@ -1634,7 +1634,7 @@ sidebar .play .movie-detail .poster-cont .movie-config .switch {
   top: 28px;
   cursor: pointer;
 }
-sidebar .play .movie-detail .poster-cont .movie-config .switch label {
+.sidebar .play .movie-detail .poster-cont .movie-config .switch label {
   -webkit-transition: color 0.2s ease;
   -moz-transition: color 0.2s ease;
   -o-transition: color 0.2s ease;
@@ -1646,17 +1646,17 @@ sidebar .play .movie-detail .poster-cont .movie-config .switch label {
   width: 20px;
   cursor: pointer;
 }
-sidebar .play .movie-detail .poster-cont .movie-config .switch label:nth-of-type(1) {
+.sidebar .play .movie-detail .poster-cont .movie-config .switch label:nth-of-type(1) {
   left: -38px;
   position: absolute;
   text-align: right;
 }
-sidebar .play .movie-detail .poster-cont .movie-config .switch label:nth-of-type(2) {
+.sidebar .play .movie-detail .poster-cont .movie-config .switch label:nth-of-type(2) {
   position: absolute;
   right: -30px;
   text-align: left;
 }
-sidebar .play .movie-detail .poster-cont .movie-config .switch input {
+.sidebar .play .movie-detail .poster-cont .movie-config .switch input {
   height: 12px;
   left: 0;
   opacity: 0;
@@ -1666,28 +1666,28 @@ sidebar .play .movie-detail .poster-cont .movie-config .switch input {
   z-index: 2;
   cursor: pointer;
 }
-sidebar .play .movie-detail .poster-cont .movie-config .switch input:checked {
+.sidebar .play .movie-detail .poster-cont .movie-config .switch input:checked {
   z-index: 0;
 }
-sidebar .play .movie-detail .poster-cont .movie-config .switch input:checked ~ label:nth-of-type(1) {
+.sidebar .play .movie-detail .poster-cont .movie-config .switch input:checked ~ label:nth-of-type(1) {
   color: #286dc4;
 }
-sidebar .play .movie-detail .poster-cont .movie-config .switch input:checked ~ label:nth-of-type(2) {
+.sidebar .play .movie-detail .poster-cont .movie-config .switch input:checked ~ label:nth-of-type(2) {
   color: #FFF;
 }
-sidebar .play .movie-detail .poster-cont .movie-config .switch input:checked ~ .toggle {
+.sidebar .play .movie-detail .poster-cont .movie-config .switch input:checked ~ .toggle {
   left: 2px;
 }
-sidebar .play .movie-detail .poster-cont .movie-config .switch input ~ :checked ~ label:nth-of-type(1) {
+.sidebar .play .movie-detail .poster-cont .movie-config .switch input ~ :checked ~ label:nth-of-type(1) {
   color: #FFF;
 }
-sidebar .play .movie-detail .poster-cont .movie-config .switch input ~ :checked ~ label:nth-of-type(2) {
+.sidebar .play .movie-detail .poster-cont .movie-config .switch input ~ :checked ~ label:nth-of-type(2) {
   color: #286dc4;
 }
-sidebar .play .movie-detail .poster-cont .movie-config .switch input ~ :checked ~ .toggle {
+.sidebar .play .movie-detail .poster-cont .movie-config .switch input ~ :checked ~ .toggle {
   left: 13px;
 }
-sidebar .play .movie-detail .poster-cont .movie-config .toggle {
+.sidebar .play .movie-detail .poster-cont .movie-config .toggle {
   -webkit-transition: left 0.2s ease;
   -moz-transition: left 0.2s ease;
   -o-transition: left 0.2s ease;
@@ -1701,7 +1701,7 @@ sidebar .play .movie-detail .poster-cont .movie-config .toggle {
   width: 10px;
   z-index: 1;
 }
-sidebar .play .movie-detail .side-content {
+.sidebar .play .movie-detail .side-content {
   z-index: 500;
   width: 60%;
   position: relative;
@@ -1711,35 +1711,35 @@ sidebar .play .movie-detail .side-content {
   -webkit-box-sizing: border-box;
   box-sizing: border-box;
 }
-sidebar .play .movie-detail .side-content .title {
+.sidebar .play .movie-detail .side-content .title {
   position: relative;
   padding: 0;
 }
-sidebar .play .movie-detail .side-content .title h2 {
+.sidebar .play .movie-detail .side-content .title h2 {
   font-weight: 200;
   font-size: 34px;
   margin-bottom: 10px;
   color: #f5f7fa;
   padding-right: 30px;
 }
-sidebar .play .movie-detail .side-content .title .movie-quick-info {
+.sidebar .play .movie-detail .side-content .title .movie-quick-info {
   margin-bottom: 5px;
 }
-sidebar .play .movie-detail .side-content .title .movie-quick-info li {
+.sidebar .play .movie-detail .side-content .title .movie-quick-info li {
   display: inline-block;
   vertical-align: top;
   font-size: 12px;
   color: #286dc4;
   font-weight: bold;
 }
-sidebar .play .movie-detail .side-content .title .movie-quick-info li::after {
+.sidebar .play .movie-detail .side-content .title .movie-quick-info li::after {
   content: '\b7\a0';
   margin-left: 2px;
 }
-sidebar .play .movie-detail .side-content .title .movie-quick-info li:last-child::after {
+.sidebar .play .movie-detail .side-content .title .movie-quick-info li:last-child::after {
   display: none;
 }
-sidebar .play .movie-detail .side-content .title .health {
+.sidebar .play .movie-detail .side-content .title .health {
   font-size: 24px;
   width: 20px;
   height: 20px;
@@ -1749,134 +1749,134 @@ sidebar .play .movie-detail .side-content .title .health {
   top: 10px;
   right: 0;
 }
-sidebar .play .movie-detail .side-content .title .health.bad {
+.sidebar .play .movie-detail .side-content .title .health.bad {
   color: red;
   border-color: red;
 }
-sidebar .play .movie-detail .side-content .title .health.medium {
+.sidebar .play .movie-detail .side-content .title .health.medium {
   color: yellow;
   border-color: yellow;
 }
-sidebar .play .movie-detail .side-content .title .health.good {
+.sidebar .play .movie-detail .side-content .title .health.good {
   color: limegreen;
   border-color: limegreen;
 }
-sidebar .play .movie-detail .side-content .title .health.excellent {
+.sidebar .play .movie-detail .side-content .title .health.excellent {
   color: green;
   border-color: green;
 }
-sidebar .play .movie-detail .side-content .rating {
+.sidebar .play .movie-detail .side-content .rating {
   display: inline-block;
   position: relative;
   font-size: 14px;
   margin: 0 10px 0 0;
 }
-sidebar .play .movie-detail .side-content .rating ul {
+.sidebar .play .movie-detail .side-content .rating ul {
   color: #f5f7fa;
 }
-sidebar .play .movie-detail .side-content p {
+.sidebar .play .movie-detail .side-content p {
   margin-top: 10px;
   color: #babdc2;
   font-size: 14px;
   line-height: 24px;
 }
-sidebar .play .movie-detail .side-content .subtitles-list {
+.sidebar .play .movie-detail .side-content .subtitles-list {
   margin-top: 10px;
   margin-bottom: 10px;
 }
-sidebar .play .movie-detail .side-content .subtitles-list h4 {
+.sidebar .play .movie-detail .side-content .subtitles-list h4 {
   font-size: 12px;
   color: #f5f7fa;
   display: inline-block;
   vertical-align: middle;
   margin-right: 5px;
 }
-sidebar .play .movie-detail .side-content .subtitles-list ul {
+.sidebar .play .movie-detail .side-content .subtitles-list ul {
   display: inline-block;
   vertical-align: middle;
 }
-sidebar .play .movie-detail .side-content .subtitles-list ul li {
+.sidebar .play .movie-detail .side-content .subtitles-list ul li {
   display: inline-block;
   vertical-align: top;
 }
-sidebar .play .movie-detail .side-content .subtitles-list ul li span {
+.sidebar .play .movie-detail .side-content .subtitles-list ul li span {
   width: 22px;
   height: 16px;
   display: inline-block;
 }
-sidebar .play .movie-detail .side-content .subtitles-list ul li .flag.flag-bg {
+.sidebar .play .movie-detail .side-content .subtitles-list ul li .flag.flag-bg {
   background-image: url(app/images/bulgarian.png);
 }
-sidebar .play .movie-detail .side-content .subtitles-list ul li .flag.flag-bs {
+.sidebar .play .movie-detail .side-content .subtitles-list ul li .flag.flag-bs {
   background-image: url(app/images/bosnian.png);
 }
-sidebar .play .movie-detail .side-content .subtitles-list ul li .flag.flag-cs {
+.sidebar .play .movie-detail .side-content .subtitles-list ul li .flag.flag-cs {
   background-image: url(app/images/czech.png);
 }
-sidebar .play .movie-detail .side-content .subtitles-list ul li .flag.flag-da {
+.sidebar .play .movie-detail .side-content .subtitles-list ul li .flag.flag-da {
   background-image: url(app/images/danish.png);
 }
-sidebar .play .movie-detail .side-content .subtitles-list ul li .flag.flag-de {
+.sidebar .play .movie-detail .side-content .subtitles-list ul li .flag.flag-de {
   background-image: url(app/images/german.png);
 }
-sidebar .play .movie-detail .side-content .subtitles-list ul li .flag.flag-en {
+.sidebar .play .movie-detail .side-content .subtitles-list ul li .flag.flag-en {
   background-image: url(app/images/english.png);
 }
-sidebar .play .movie-detail .side-content .subtitles-list ul li .flag.flag-es {
+.sidebar .play .movie-detail .side-content .subtitles-list ul li .flag.flag-es {
   background-image: url(app/images/spanish.png);
 }
-sidebar .play .movie-detail .side-content .subtitles-list ul li .flag.flag-et {
+.sidebar .play .movie-detail .side-content .subtitles-list ul li .flag.flag-et {
   background-image: url(app/images/estonian.png);
 }
-sidebar .play .movie-detail .side-content .subtitles-list ul li .flag.flag-fi {
+.sidebar .play .movie-detail .side-content .subtitles-list ul li .flag.flag-fi {
   background-image: url(app/images/finnish.png);
 }
-sidebar .play .movie-detail .side-content .subtitles-list ul li .flag.flag-fr {
+.sidebar .play .movie-detail .side-content .subtitles-list ul li .flag.flag-fr {
   background-image: url(app/images/french.png);
 }
-sidebar .play .movie-detail .side-content .subtitles-list ul li .flag.flag-hr {
+.sidebar .play .movie-detail .side-content .subtitles-list ul li .flag.flag-hr {
   background-image: url(app/images/croatian.png);
 }
-sidebar .play .movie-detail .side-content .subtitles-list ul li .flag.flag-hu {
+.sidebar .play .movie-detail .side-content .subtitles-list ul li .flag.flag-hu {
   background-image: url(app/images/hungarian.png);
 }
-sidebar .play .movie-detail .side-content .subtitles-list ul li .flag.flag-he {
+.sidebar .play .movie-detail .side-content .subtitles-list ul li .flag.flag-he {
   background-image: url(app/images/hebrew.png);
 }
-sidebar .play .movie-detail .side-content .subtitles-list ul li .flag.flag-it {
+.sidebar .play .movie-detail .side-content .subtitles-list ul li .flag.flag-it {
   background-image: url(app/images/italian.png);
 }
-sidebar .play .movie-detail .side-content .subtitles-list ul li .flag.flag-lt {
+.sidebar .play .movie-detail .side-content .subtitles-list ul li .flag.flag-lt {
   background-image: url(app/images/lithuanian.png);
 }
-sidebar .play .movie-detail .side-content .subtitles-list ul li .flag.flag-mt {
+.sidebar .play .movie-detail .side-content .subtitles-list ul li .flag.flag-mt {
   background-image: url(app/images/maltese.png);
 }
-sidebar .play .movie-detail .side-content .subtitles-list ul li .flag.flag-nl {
+.sidebar .play .movie-detail .side-content .subtitles-list ul li .flag.flag-nl {
   background-image: url(app/images/dutch.png);
 }
-sidebar .play .movie-detail .side-content .subtitles-list ul li .flag.flag-pl {
+.sidebar .play .movie-detail .side-content .subtitles-list ul li .flag.flag-pl {
   background-image: url(app/images/polish.png);
 }
-sidebar .play .movie-detail .side-content .subtitles-list ul li .flag.flag-pt {
+.sidebar .play .movie-detail .side-content .subtitles-list ul li .flag.flag-pt {
   background-image: url(app/images/portuguese.png);
 }
-sidebar .play .movie-detail .side-content .subtitles-list ul li .flag.flag-pt-br {
+.sidebar .play .movie-detail .side-content .subtitles-list ul li .flag.flag-pt-br {
   background-image: url(app/images/brazilian.png);
 }
-sidebar .play .movie-detail .side-content .subtitles-list ul li .flag.flag-ro {
+.sidebar .play .movie-detail .side-content .subtitles-list ul li .flag.flag-ro {
   background-image: url(app/images/romanian.png);
 }
-sidebar .play .movie-detail .side-content .subtitles-list ul li .flag.flag-ru {
+.sidebar .play .movie-detail .side-content .subtitles-list ul li .flag.flag-ru {
   background-image: url(app/images/russian.png);
 }
-sidebar .play .movie-detail .side-content .subtitles-list ul li .flag.flag-sr {
+.sidebar .play .movie-detail .side-content .subtitles-list ul li .flag.flag-sr {
   background-image: url(app/images/serbian.png);
 }
-sidebar .play .movie-detail .side-content .subtitles-list ul li .flag.flag-tr {
+.sidebar .play .movie-detail .side-content .subtitles-list ul li .flag.flag-tr {
   background-image: url(app/images/turkish.png);
 }
-sidebar .play .movie-detail .side-content a.play-button {
+.sidebar .play .movie-detail .side-content a.play-button {
   background: #286dc4;
   background-image: linear-gradient(to bottom, #3076ce 0%, #175ab0 100%);
   color: #FFF;
@@ -1888,10 +1888,10 @@ sidebar .play .movie-detail .side-content a.play-button {
   margin-top: 10px;
   box-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
 }
-sidebar .play .movie-detail .side-content a.play-button:hover {
+.sidebar .play .movie-detail .side-content a.play-button:hover {
   background-image: linear-gradient(to bottom, #4387de 0%, #175ab0 100%);
 }
-sidebar .play .movie-detail .side-content a.play-button[disabled] {
+.sidebar .play .movie-detail .side-content a.play-button[disabled] {
   background-image: linear-gradient(to bottom, #cccccc 0%, #777777 100%);
 }
 
