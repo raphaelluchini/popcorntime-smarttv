@@ -21,9 +21,7 @@
       "url": "https://github.com/BoilerplateMVC/Marionette-Require-Boilerplate/blob/master/LICENSE-MIT"
     }
   ],
-  "dependencies": {
-    
-  },
+  "dependencies": {},
   "devDependencies": {
     "express": "3.x",
     "grunt": "~0.4.1",

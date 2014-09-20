@@ -39,6 +39,27 @@
                 callback(err, xhr, undefined);
             });
     }
+    function getStars(p_rating){
+        var stars = {
+            full:0,
+            half:false,
+            empty:0
+        };
+        p_rating = Math.round(p_rating) / 2; // Roundoff number to nearest 0.5 %>
+
+        for (var i = 1; i <= Math.floor(p_rating); i++) {
+          stars.full ++;
+        }
+
+        stars.empty = 5 - stars.full;
+
+        if (p_rating % 1 > 0) {
+          stars.half = true;
+          stars.empty --;
+        }
+
+        return stars;
+    }
 
     // Hack to keep to cancel the request in case of new request
     var currentRequest = null;
@@ -144,6 +165,7 @@
                                 torrents[movie.Quality] = movie.TorrentUrl;
 
                                 var imdbId = movie.ImdbCode.replace('tt', '');
+                                var voteAverage = movie.MovieRating ? parseFloat(movie.MovieRating).toFixed(1) : 0.0;
                                 // Temporary object
                                 var movieModel = {
                                     imdb:       imdbId,
@@ -151,7 +173,11 @@
                                     year:       movie.MovieYear,
                                     runtime:    0,
                                     synopsis:   '',
-                                    voteAverage:parseFloat(movie.MovieRating),
+                                    voteAverage:voteAverage,
+                                    stars:      getStars(voteAverage),
+                                    is720p:     (movie.Quality === '720p'),
+                                    is1080p:    (movie.Quality === '1080p'),
+                                    hasSDAndHD: (movie.Quality === '720p' && movie.Quality === '1080p'),
 
                                     image:      movie.CoverImage.replace(/_med\./, '_large.'),
                                     bigImage:   movie.CoverImage.replace(/_med\./, '_large.'),
@@ -168,7 +194,7 @@
                                     // YTS do not provide metadata and subtitle
                                     hasSubtitle:true
                                 };
-
+                                
                                 if(traktInfo) {
                                     movieModel.image = trakt.resizeImage(traktInfo.images.poster, '138');
                                     movieModel.bigImage = trakt.resizeImage(traktInfo.images.poster, '300');

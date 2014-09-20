@@ -6,26 +6,26 @@
     <div class="poster-cont">
       <div class="poster-inner">
         <div class="poster">
-      <img class="big-poster" src="{{bigImage}}" alt="{{title}}" />
+        <img class="big-poster" src="{{bigImage}}" alt="{{title}}" />
     </div>
 
         <ul class="movie-config">
-        <% if (this.model.get('quality') && this.model.get('torrents')) { %>
+        {{#if quality}}
           <li class="options quality-cont">
             <h4><%= i18n.__('quality') %></h4>
-            <% if (this.model.get('torrents')["720p"] && this.model.get('torrents')["1080p"]) { %>
+            {{#unless hasSDAndHD}}
               <div class="quality switch white">
-                <input type="radio" name="switch" id="switch-off"<% if (this.model.get('quality') === '720p') { %> checked<% } %>>
-                <input type="radio" name="switch" id="switch-on"<% if (this.model.get('quality') === '1080p') { %> checked<% } %>>
+                <input type="radio" name="switch" id="switch-off"{{#if is720p}} checked {{/if}}>
+                <input type="radio" name="switch" id="switch-on"{{#if is1080p}} checked {{/if}}>
                 <label for="switch-off">720p</label>
                 <label for="switch-on">1080p</label>
                 <span class="toggle"></span>
               </div>
-            <% } else { %>
+            {{else}}
               <span class="quality-off">{{quality}}</span>
-            <% } %>
+            {{/unless}}
           </li>
-        <% } %>
+        {{/if}}
         </ul>
       </div>
     </div>
@@ -49,19 +49,20 @@
 
         <i data-placement="left" data-toggle="tooltip" title="{{health}} health" class="health {{health}} fa fa-flash"></i>
 
-        <% var p_rating = this.model.get('voteAverage') ? this.model.get('voteAverage').toFixed(1) : 0.0 %>
+        
         <div class="rating">
-          <ul class="votes" title="{{p_rating}} / 10">
-            <% p_rating = Math.round(p_rating) / 2; // Roundoff number to nearest 0.5 %>
-            <% for (var i = 1; i <= Math.floor(p_rating); i++) { %>
+          <ul class="votes" title="{{voteAverage}} / 10">
+            {{#stars}}
+              {{#repeat full}}
               <i class="fa fa-star"></i>
-            <% }; %>
-            <% if (p_rating % 1 > 0) { %>
+              {{/repeat}}
+              {{#if half}}
               <i class="fa fa-star-half-o"></i>
-            <% }; %>
-            <% for (var i = Math.ceil(p_rating); i < 5; i++) { %>
+              {{/if}}
+              {{#repeat empty}}
               <i class="fa fa-star-o"></i>
-            <% }; %>
+              {{/repeat}}
+            {{/stars}}
           </ul>
         </div>
       </div>
@@ -69,19 +70,16 @@
       <p>{{synopsis}}</p>
 
       <div class="subtitles-list">
-      <% if ( ! _.isEmpty(subtitles) ) { %>
+      {{#if subtitles}}
         <h4><%= i18n.__('subtitledIn') %></h4>
-
         <ul>
-          <% if (typeof subtitles !== 'undefined') { %>
             <li>
-              <% for (var i = 0, keys = _.keys(subtitles), l = keys.length; i < l; ++i) { %>
-                <span class="flag flag-<%= keys[i] %>" title="<%= App.Localization.languages[keys[i]].display %>"></span>
-              <% } %>
+              {{#each subtitles}}
+                <span class="flag flag-{{@key}}" title="<%= App.Localization.languages[keys[i]].display %>"></span>
+              {{/each}}
             </li>
-          <% } %>
         </ul>
-      <% } %>
+      {{/if}}
       </div>
 
       {{#if torrents}}

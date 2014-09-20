@@ -5,8 +5,6 @@ require.config({
     paths:{
         // Core Libraries
         "jquery":"../libs/jquery",
-        "jqueryui":"../libs/jqueryui",
-        "jquerymobile":"../libs/jquery.mobile",
         "underscore":"../libs/lodash",
         "backbone":"../libs/backbone",
         "marionette":"../libs/backbone.marionette",
@@ -14,28 +12,16 @@ require.config({
         "hbs":"../libs/hbs",
         "i18nprecompile":"../libs/i18nprecompile",
         "json2":"../libs/json2",
-        "jasmine": "../libs/jasmine",
-        "jasmine-html": "../libs/jasmine-html",
         "Q":"../libs/q",
         'URI': '../libs/URI',
         'async': '../libs/async',
         // Plugins
-        "backbone.validateAll":"../libs/plugins/Backbone.validateAll",
-        "bootstrap":"../libs/plugins/bootstrap",
         "text":"../libs/plugins/text",
-        "jasminejquery": "../libs/plugins/jasmine-jquery"
     },
     // Sets the configuration for your third party scripts that are not AMD compatible
     shim:{
 
         "URI": ["jquery"],
-        // Twitter Bootstrap jQuery plugins
-        "bootstrap":["jquery"],
-        // jQueryUI
-        "jqueryui":["jquery"],
-        // jQuery mobile
-        "jquerymobile":["jqueryui"],
-
         // Backbone
         "backbone":{
             // Depends on underscore/lodash and jQuery
@@ -51,18 +37,6 @@ require.config({
         //Handlebars
         "handlebars":{
             "exports":"Handlebars"
-        },
-        // Backbone.validateAll plugin that depends on Backbone
-        "backbone.validateAll":["backbone"],
-
-        "jasmine": {
-            // Exports the global 'window.jasmine' object
-            "exports": "jasmine"
-        },
-
-        "jasmine-html": {
-            "deps": ["jasmine"],
-            "exports": "jasmine"
         }
     },
     // hbs config - must duplicate in Gruntfile.js Require build
@@ -70,7 +44,6 @@ require.config({
         templateExtension: "html",
         helperDirectory: "templates/helpers/",
         i18nDirectory: "templates/i18n/",
-
         compileOptions: {}        // options object which is passed to Handlebars compiler
     }
 });
