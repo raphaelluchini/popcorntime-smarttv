@@ -10,7 +10,12 @@
     <script src="//cdnjs.cloudflare.com/ajax/libs/URI.js/1.7.2/URI.min.js"></script>
     <!--Detect if the browser is a mobile browser or a desktop browser and conditionally include your JavaScript -->
     <script>
-
+        //temporary hack to avoid i18n
+        var i18n = function(){
+          return {
+              __:function(st){return st;}
+          };
+        }();
         // Mobile/Desktop Detection script
         (function(ua, w, d, undefined) {
 
@@ -121,9 +126,18 @@
     <header id="header"><h1>Popcorn Time</h1></header>
 
     <div id="catalog-select"></div>
-    
     <section id="main" class="container"></section>
     <section id="sidebar"></section>
+    <section id="player"></section>
+    <div class="popcorn-load hidden">
+      <div class="wrapper">
+        <span class="spinner"></span>
+        <span class="text"></span>
+        <div class="progressbar"><div class="progress"></div></div>
+        <div class="progressinfo"></div>
+      </div>
+      <a href="javascript:;" class="btn-close"><i class="fa fa-times"></i></a>
+    </div>
 </div>
 
 </body>

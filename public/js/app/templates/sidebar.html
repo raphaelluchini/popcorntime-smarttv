@@ -1,5 +1,5 @@
 <div class="play">
-  <div class="backdrop-image" style="background-image:url({{backdrop}});"></div>
+  <div class="backdrop-image"></div>
 
   <div class="movie-detail">
     <div class="closer"><i class="fa fa-times"></i></div>
@@ -83,7 +83,7 @@
       </div>
 
       {{#if torrents}}
-        <a href="" class="p_tooltip play-button" disabled="disabled"><%= i18n.__('watchItNow') %></a>
+        <a href="#/player/{{imdb}}" class="p_tooltip play-button"><%= i18n.__('watchItNow') %></a>
       {{/if}}
     </div>
   </div>

@@ -1909,8 +1909,7 @@ body.has-notification #notification {
   opacity: 0 !important;
 }
 
-#video-container {
-  display: none;
+#player {
   height: 100%;
   left: 0;
   position: absolute;

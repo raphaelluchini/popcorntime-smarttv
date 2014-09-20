@@ -12,9 +12,13 @@ define( ['App', 'jquery', 'backbone', 'marionette', 'hbs!templates/sidebar'],
 
             initialize: function (options) {
                 this.model = App.Scrapers.get(options.currentMovie);
+                if(!this.model){
+                    this.$el.addClass('hidden');
+                    window.location = '#/';
+                }
             },
 
-            onRender: function(){
+            show: function() {
                 this.$el.removeClass('hidden');
 
                 this.backdropCache = new Image();
@@ -54,6 +58,23 @@ define( ['App', 'jquery', 'backbone', 'marionette', 'hbs!templates/sidebar'],
                     this.model.set('torrent', torrents['720p']);
                     this.model.set('quality', '720p');
                 }
+            },
+
+            play: function (evt) {
+                //evt.preventDefault();
+                // if( videoStreamer !== null ){ return; }
+
+                //Unfocus "Watch now" button
+                this.$el.find('.play-button').blur();
+
+                var file = this.model.get('torrent'),
+                    subs = this.model.get('subtitles');
+
+                $('.popcorn-load').addClass('withProgressBar').addClass('cancellable').find('.progress').css('width', 0.0+'%');
+                $('.popcorn-load .progressinfo').text( i18n.__('connecting') );
+
+                
+                $('body').addClass('loading');
             }
         });
     });
