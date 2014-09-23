@@ -1,7 +1,6 @@
  define(['backbone','Q'],
     function(_, Q) {
         //var db = openDatabase('cachedb', '', 'Cache database', 50 * 1024 * 1024);
-
         var Cache = {
             clear: function () {
                 /*db.transaction(function (tx) {
@@ -61,7 +60,6 @@
                     key = JSON.stringify(key);
                 }
                 cb();
-                
                 /*db.transaction(function (tx) {
                     tx.executeSql('SELECT data FROM ' + provider + ' WHERE key = ?', [key], function (tx, results) {
                         try {

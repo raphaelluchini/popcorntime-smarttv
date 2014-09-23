@@ -4,10 +4,9 @@ define(['App', 'jquery', 'underscore', 'hbs!templates/player', 'backbone', 'cont
             template: template,
             className:"player",
             events:{
-                'click #video_player_close': 'close',
+                'click #video_player_close': 'close'
             },
             initialize:function(options){
-                
                 this.$el.removeClass('hidden');
                 this.model = App.Scrapers.get(options.currentMovie);
                 var playerManager = new PlayerManager();
@@ -44,9 +43,7 @@ define(['App', 'jquery', 'underscore', 'hbs!templates/player', 'backbone', 'cont
                 );
             },
 
-            show:function(){
-                
-            },
+            show:function(){},
 
             close:function(){
                 window.location = "/#/details/" + this.model.get('imdb');

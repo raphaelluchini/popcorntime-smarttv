@@ -14,7 +14,7 @@ define(['jquery'],
 
 			var jqueryOptions = {
 				url: options.uri || options.url
-			}
+			};
 			if(options.json)
 				jqueryOptions.dataType = 'jsonp';
 			if(options.headers)
@@ -45,7 +45,7 @@ define(['jquery'],
 		}
 
 		MovieCollection.prototype.getSummaries = function(callback) {
-			if(this.ids.length == 0) {
+			if(this.ids.length === 0) {
 				callback([]);
 				return;
 			}
@@ -65,19 +65,19 @@ define(['jquery'],
 				console.timeEnd('Trakt.tv Request Took');
 				callback(body);
 			});
-		}
+		};
 
 		this.resizeImage = function(imageUrl, width) {
 			var uri = window.URI(imageUrl),
-				ext = uri.suffix()
+				ext = uri.suffix(),
 				file = uri.filename().split('.' + ext)[0];
 
 			return uri.filename(file + '-' + width + '.' + ext).toString();
-		}
+		};
 
 		return {
 			resizeImage: this.resizeImage,
 			MovieCollection: MovieCollection
-		}
+		};
 	}
 );

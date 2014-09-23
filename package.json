@@ -25,9 +25,9 @@
   "devDependencies": {
     "express": "3.x",
     "grunt": "~0.4.1",
-    "grunt-contrib-jshint": "~0.3.0",
+    "grunt-contrib-jshint": "~0.10.0",
     "grunt-contrib-requirejs": "~0.4.0",
-    "uglify-js": "~2.2.5"
+    "grunt-contrib-watch": "^0.6.1"
   },
   "keywords": [
     "Marionette.js",

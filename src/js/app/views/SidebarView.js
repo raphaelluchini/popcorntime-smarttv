@@ -32,7 +32,7 @@ define( ['App', 'jquery', 'backbone', 'marionette', 'hbs!templates/sidebar'],
 
                 $('.movie.active').removeClass('active');
                 this.$el.addClass('hidden');
-                
+
                 if( typeof this.backdropCache != 'undefined' ) {
                     this.backdropCache.src = null;
                 }
@@ -74,8 +74,6 @@ define( ['App', 'jquery', 'backbone', 'marionette', 'hbs!templates/sidebar'],
 
                 $('.popcorn-load').addClass('withProgressBar').addClass('cancellable').find('.progress').css('width', 0.0+'%');
                 $('.popcorn-load .progressinfo').text( i18n.__('connecting') );
-
-                
                 $('body').addClass('loading');
             }
         });

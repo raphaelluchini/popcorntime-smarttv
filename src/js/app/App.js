@@ -9,7 +9,7 @@ define(['jquery', 'backbone', 'marionette', 'underscore', 'handlebars', 'provide
         });
 
         App.Scrapers.fetch();
-        
+
         App.Scrapers.on('loaded', function(){
             $('.popcorn-load').addClass('hidden');
         });

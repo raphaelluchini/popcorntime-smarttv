@@ -8,9 +8,7 @@ define(['App', 'backbone', 'marionette', 'views/MenuView', 'views/MainView', 'vi
             App.mainRegion.show(App.views.main);
         },
         //gets mapped to in AppRouter's appRoutes
-        index:function () {
-            
-        },
+        index:function () {},
         sidebar:function(id) {
             App.views.sidebar = new SidebarView({currentMovie:id});
             App.sidebarRegion.show(App.views.sidebar);

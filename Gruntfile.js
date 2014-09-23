@@ -40,8 +40,15 @@ module.exports = function(grunt) {
             }
         },
         jshint: {
-            files: ['Gruntfile.js', 'public/js/app/**/*.js', '!public/js/app/**/*min.js'],
+            files: ['Gruntfile.js', 'src/js/app/**/*.js', '!src/js/libs/**/*.js', '!./**/*min.js'],
             options: {
+                evil: false,
+                regexdash: true,
+                browser: true,
+                wsh: true,
+                trailing: true,
+                sub: true,
+                nonbsp:true,
                 globals: {
                     jQuery: true,
                     console: false,
@@ -49,11 +56,21 @@ module.exports = function(grunt) {
                     document: true
                 }
             }
+        },
+        watch: {
+          scripts: {
+            files: ['src/js/**/*.js'],
+            tasks: ['dev'],
+            options: {
+              spawn: false
+            }
+          }
         }
     });
-
+    grunt.loadNpmTasks('grunt-contrib-watch');
+    grunt.loadNpmTasks('grunt-contrib-jshint');
     grunt.loadNpmTasks('grunt-contrib-requirejs');
-    grunt.registerTask('build', ['requirejs:dist']);
-    grunt.registerTask('dev', ['requirejs:dev']);
+    grunt.registerTask('build', ['jshint', 'requirejs:dist']);
+    grunt.registerTask('dev', ['jshint', 'requirejs:dev']);
     grunt.registerTask('default', ['build']);
 };

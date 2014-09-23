@@ -1,9 +1,6 @@
  define(['jquery', 'underscore', 'backbone', 'models/Movie', 'providers/Ysubs', 'others/Cache', 'providers/trakttv', 'async'],
     function($, _, Backbone, Movie, Ysubs, Cache, trakt, async) {
-    
 
-    //var trakt = require('./js/frontend/providers/trakttv');
-    //var request = require('request');
     function request (uri, options, callback) {
         if (typeof uri === 'undefined') throw new Error('undefined is not a valid uri or options object.');
         if ((typeof options === 'function') && !callback) callback = options;
@@ -18,7 +15,7 @@
         var jqueryOptions = {
             url: options.uri || options.url
         };
-        
+
         if(options.json)
             jqueryOptions.dataType = 'json';
         if(options.headers)
@@ -85,14 +82,13 @@
             if (options.page && options.page.match(/\d+/)) {
                 this.apiUrl += '&set=' + options.page;
             }
-            
+
             this.options = options;
             Yts.__super__.initialize.apply(this, arguments);
         },
 
         addMovie: function(model) {
-            
-            var stored = _.find(this.movies, function(movie) { return movie.imdb == model.imdb });
+            var stored = _.find(this.movies, function(movie) { return (movie.imdb == model.imdb); });
 
             // Create it on memory map if it doesn't exist.
             if (typeof stored === 'undefined') {
@@ -124,8 +120,7 @@
 
             console.debug('Requesting from YTS: %s', this.apiUrl);
             console.time('YTS Request Took');
-            
-            var thisRequest = currentRequest = request(this.apiUrl, {json: true}, function(err, res, ytsData) {
+            var thisRequest = request(this.apiUrl, {json: true}, function(err, res, ytsData) {
                 console.timeEnd('YTS Request Took');
                 var i = 0;
 
@@ -146,11 +141,11 @@
                 .then(function(subtitles) {
                     async.filterSeries(
                       imdbIds,
-                      function(cd, cb) { Cache.getItem('trakttv', cd, function(d) { cb(d == undefined) }) },
+                      function(cd, cb) { Cache.getItem('trakttv', cd, function(d) { cb(d === undefined); }); },
                       function(imdbCodes) {
 
                         var traktMovieCollection = new trakt.MovieCollection(imdbCodes);
-                        
+
                         traktMovieCollection.getSummaries(function(trakData) {
                             // Check if new request was started
                             if(thisRequest !== currentRequest) return;
@@ -158,9 +153,9 @@
                             i = ytsData.MovieList.length;
                             ytsData.MovieList.forEach(function (movie) {
                                 // No imdb, no movie.
-                                if( typeof movie.ImdbCode != 'string' || movie.ImdbCode.replace('tt', '') == '' ){ return; }
+                                if( typeof movie.ImdbCode != 'string' || movie.ImdbCode.replace('tt', '') === '' ){ return; }
 
-                                var traktInfo = _.find(trakData, function(trakMovie) { return trakMovie.imdb_id == movie.ImdbCode });
+                                var traktInfo = _.find(trakData, function(trakMovie) { return trakMovie.imdb_id == movie.ImdbCode; });
 
                                 var torrents = {};
                                 torrents[movie.Quality] = movie.TorrentUrl;
@@ -195,7 +190,7 @@
                                     // YTS do not provide metadata and subtitle
                                     hasSubtitle:true
                                 };
-                                
+
                                 if(traktInfo) {
                                     movieModel.image = trakt.resizeImage(traktInfo.images.poster, '138');
                                     movieModel.bigImage = trakt.resizeImage(traktInfo.images.poster, '300');
@@ -205,7 +200,7 @@
                                     Cache.setItem('trakttv', traktInfo.imdb_id, traktInfo);
                                     console.warn('Trakt.tv Cache Miss %O', traktInfo);
                                     collection.addMovie(movieModel);
-                                    if(--i == 0) {
+                                    if(--i === 0) {
                                         collection.set(collection.movies);
                                         collection.trigger('loaded');
                                     }
@@ -220,7 +215,7 @@
                                         }
                                         console.debug('Trakt.tv Cache Hit %O', traktInfo);
                                         collection.addMovie(movieModel);
-                                        if(--i == 0) {
+                                        if(--i === 0) {
                                             console.log(collection.movies);
                                             collection.set(collection.movies);
                                             collection.trigger('loaded');
@@ -232,6 +227,7 @@
                     });
                 });
             });
+            currentRequest = thisRequest;
         }
     });
 

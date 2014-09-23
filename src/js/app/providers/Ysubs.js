@@ -16,7 +16,8 @@
 
         var jqueryOptions = {
             url: options.uri || options.url
-        }
+        };
+
         if(options.json)
             jqueryOptions.dataType = 'json';
         if(options.headers)
@@ -28,8 +29,8 @@
         if(options.timeout)
             jqueryOptions.timeout = options.timeout;
 
-        jqueryOptions.timeout = options.crossDomain 
-        
+        jqueryOptions.timeout = options.crossDomain;
+
         $.ajax(jqueryOptions)
             .done(function(data, status, xhr) {
                 console.debug("%O", data);
@@ -54,7 +55,7 @@
 
         var deferred = Q.defer();
 
-        if(imdbIds.length == 0) {
+        if(imdbIds.length === 0) {
             deferred.resolve({subs:[]});
             return deferred.promise;
         }
