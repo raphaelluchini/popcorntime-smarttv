@@ -3,10 +3,13 @@ popcorntime-smarttv
 
 Version of [Popcorntime](https://github.com/popcorn-official/popcorn-app) for Samsung SmartTv
 
+This app now depends of [Popcorntime-smarttv-server](https://github.com/raphaelluchini/popcorntime-smarttv-server)
+
 #Scope
 For the best UX and performace for smartvs we need a very organized and clean code, using some tools and making some code refactors, we are be able to push this app foward pretty fast! That's why I'm not responding the issues for while, Sorry!
 
 #Notes
+- For better issue tracker, docs, and fast development, I've moved the node server(core) to another repository, so now we have separated projects. Any problem about the server, goto: [Popcorntime-smarttv-server page](https://github.com/raphaelluchini/popcorntime-smarttv-server)
 - New Frontend code refactored comming soon! Please, wait the next version for bugs reports!
 - Any suggestion, feel free to ask me!
 
