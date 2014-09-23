@@ -21,13 +21,16 @@ For the best UX and performace for smartvs we need a very organized and clean co
 
 ## How to use Popcorntime Server
 
-- You going to need [node.js](http://nodejs.org/) installed in your computer
-- Open your terminal and run `` node server``
-- Get your IP number and go to your app source code and edit the file server.js line 8 with you ip
+- Do you will need npm and grunt-cli installed in your computer
+- run ``npm install``
+- Set your [server](https://github.com/raphaelluchini/popcorntime-smarttv-server) ip in PlayerManager.js
+- run ``grunt``
+- Start your server
 - Deploy your app on your TV and run :)
 
 #Dev TODOS
 
+- Better documentation for deploy/test/run
 - Server code refactor
 - Add i8n support
 - Add Subtitles
