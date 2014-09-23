@@ -96,9 +96,7 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
 
 /* Layout */
 video {
-  width: 200px;
-  height: 112px;
-  border: 1px solid black;
+  background-color: #000;
 }
 
 .video-container {
@@ -752,7 +750,7 @@ body.has-notification #notification {
   font-size: 22px;
 }
 .popcorn-load .spinner {
-  background: url(app/images/spinner.svg) no-repeat 0 0;
+  background: url(../images/spinner.svg) no-repeat 0 0;
   background-size: cover;
   display: block;
   height: 45px;
@@ -940,7 +938,7 @@ body.has-notification #notification {
   display: block;
   margin: 0 0 10px 0;
   border-radius: 3px;
-  background: url(app/images/posterholder.png) no-repeat 50% 50%;
+  background: url(../images/posterholder.png) no-repeat 50% 50%;
   -webkit-transform: translateZ(0);
 }
 .movie-list li img {
@@ -1515,7 +1513,7 @@ body.has-notification #notification {
   background: #000;
   border: 1px solid #000;
   box-shadow: 0 2px 3px rgba(0, 0, 0, 0.4);
-  background: url(app/images/posterholder.png) no-repeat 50% 50%;
+  background: url(../images/posterholder.png) no-repeat 50% 50%;
   background-size: cover;
   -webkit-transform: translateZ(0);
 }
@@ -1805,76 +1803,76 @@ body.has-notification #notification {
   display: inline-block;
 }
 .sidebar .play .movie-detail .side-content .subtitles-list ul li .flag.flag-bg {
-  background-image: url(app/images/bulgarian.png);
+  background-image: url(../images/bulgarian.png);
 }
 .sidebar .play .movie-detail .side-content .subtitles-list ul li .flag.flag-bs {
-  background-image: url(app/images/bosnian.png);
+  background-image: url(../images/bosnian.png);
 }
 .sidebar .play .movie-detail .side-content .subtitles-list ul li .flag.flag-cs {
-  background-image: url(app/images/czech.png);
+  background-image: url(../images/czech.png);
 }
 .sidebar .play .movie-detail .side-content .subtitles-list ul li .flag.flag-da {
-  background-image: url(app/images/danish.png);
+  background-image: url(../images/danish.png);
 }
 .sidebar .play .movie-detail .side-content .subtitles-list ul li .flag.flag-de {
-  background-image: url(app/images/german.png);
+  background-image: url(../images/german.png);
 }
 .sidebar .play .movie-detail .side-content .subtitles-list ul li .flag.flag-en {
-  background-image: url(app/images/english.png);
+  background-image: url(../images/english.png);
 }
 .sidebar .play .movie-detail .side-content .subtitles-list ul li .flag.flag-es {
-  background-image: url(app/images/spanish.png);
+  background-image: url(../images/spanish.png);
 }
 .sidebar .play .movie-detail .side-content .subtitles-list ul li .flag.flag-et {
-  background-image: url(app/images/estonian.png);
+  background-image: url(../images/estonian.png);
 }
 .sidebar .play .movie-detail .side-content .subtitles-list ul li .flag.flag-fi {
-  background-image: url(app/images/finnish.png);
+  background-image: url(../images/finnish.png);
 }
 .sidebar .play .movie-detail .side-content .subtitles-list ul li .flag.flag-fr {
-  background-image: url(app/images/french.png);
+  background-image: url(../images/french.png);
 }
 .sidebar .play .movie-detail .side-content .subtitles-list ul li .flag.flag-hr {
-  background-image: url(app/images/croatian.png);
+  background-image: url(../images/croatian.png);
 }
 .sidebar .play .movie-detail .side-content .subtitles-list ul li .flag.flag-hu {
-  background-image: url(app/images/hungarian.png);
+  background-image: url(../images/hungarian.png);
 }
 .sidebar .play .movie-detail .side-content .subtitles-list ul li .flag.flag-he {
-  background-image: url(app/images/hebrew.png);
+  background-image: url(../images/hebrew.png);
 }
 .sidebar .play .movie-detail .side-content .subtitles-list ul li .flag.flag-it {
-  background-image: url(app/images/italian.png);
+  background-image: url(../images/italian.png);
 }
 .sidebar .play .movie-detail .side-content .subtitles-list ul li .flag.flag-lt {
-  background-image: url(app/images/lithuanian.png);
+  background-image: url(../images/lithuanian.png);
 }
 .sidebar .play .movie-detail .side-content .subtitles-list ul li .flag.flag-mt {
-  background-image: url(app/images/maltese.png);
+  background-image: url(../images/maltese.png);
 }
 .sidebar .play .movie-detail .side-content .subtitles-list ul li .flag.flag-nl {
-  background-image: url(app/images/dutch.png);
+  background-image: url(../images/dutch.png);
 }
 .sidebar .play .movie-detail .side-content .subtitles-list ul li .flag.flag-pl {
-  background-image: url(app/images/polish.png);
+  background-image: url(../images/polish.png);
 }
 .sidebar .play .movie-detail .side-content .subtitles-list ul li .flag.flag-pt {
-  background-image: url(app/images/portuguese.png);
+  background-image: url(../images/portuguese.png);
 }
 .sidebar .play .movie-detail .side-content .subtitles-list ul li .flag.flag-pt-br {
-  background-image: url(app/images/brazilian.png);
+  background-image: url(../images/brazilian.png);
 }
 .sidebar .play .movie-detail .side-content .subtitles-list ul li .flag.flag-ro {
-  background-image: url(app/images/romanian.png);
+  background-image: url(../images/romanian.png);
 }
 .sidebar .play .movie-detail .side-content .subtitles-list ul li .flag.flag-ru {
-  background-image: url(app/images/russian.png);
+  background-image: url(../images/russian.png);
 }
 .sidebar .play .movie-detail .side-content .subtitles-list ul li .flag.flag-sr {
-  background-image: url(app/images/serbian.png);
+  background-image: url(../images/serbian.png);
 }
 .sidebar .play .movie-detail .side-content .subtitles-list ul li .flag.flag-tr {
-  background-image: url(app/images/turkish.png);
+  background-image: url(../images/turkish.png);
 }
 .sidebar .play .movie-detail .side-content a.play-button {
   background: #286dc4;
@@ -1909,7 +1907,7 @@ body.has-notification #notification {
   opacity: 0 !important;
 }
 
-#player {
+.player {
   height: 100%;
   left: 0;
   position: absolute;
@@ -1917,6 +1915,12 @@ body.has-notification #notification {
   width: 100%;
   z-index: 998;
   -webkit-app-region: no-drag;
+}
+
+.player.hidden {
+  opacity: 0;
+  z-index: 0;
+  pointer-events: none;
 }
 
 #video_player_close {

@@ -1,26 +1,41 @@
 module.exports = function(grunt) {
-
     grunt.initConfig({
         pkg: grunt.file.readJSON('package.json'),
         requirejs: {
-            desktopJS: {
+            dist: {
                 options: {
-                    baseUrl: "public/js/app",
-                    //wrap: true,
-                    // Cannot use almond since it does not currently appear to support requireJS's config-map
-                    name: "../libs/almond",
-                    //preserveLicenseComments: false,
-                    optimize: "none",
-                    mainConfigFile: "public/js/app/config/config.js",
-                    include: ["init/DesktopInit"],
-                    out: "public/js/app/init/DesktopInit.min.js"
+                    baseUrl: "src/js/app",
+                    optimize: "uglify2",
+                    preserveLicenseComments : false,
+                    inlineText : true,
+                    findNestedDependencies : true,
+                    mainConfigFile: "src/js/config/config.js",
+                    paths : {
+                      requireLib : '../libs/require'
+                   },
+                    include: [
+                        'requireLib',
+                        "../AppInit"
+                    ],
+                    out: "public/optimized.min.js"
                 }
             },
-            desktopCSS: {
+            dev: {
                 options: {
-                    optimizeCss: "standard",
-                    cssIn: "./public/css/desktop.css",
-                    out: "./public/css/desktop.min.css"
+                    baseUrl: "src/js/app",
+                    optimize: "none",
+                    preserveLicenseComments : false,
+                    inlineText : true,
+                    findNestedDependencies : true,
+                    mainConfigFile: "src/js/config/config.js",
+                    paths : {
+                      requireLib : '../libs/require'
+                   },
+                    include: [
+                        'requireLib',
+                        "../AppInit"
+                    ],
+                    out: "public/optimized.min.js"
                 }
             }
         },
@@ -38,8 +53,7 @@ module.exports = function(grunt) {
     });
 
     grunt.loadNpmTasks('grunt-contrib-requirejs');
-    grunt.loadNpmTasks('grunt-contrib-jshint');
-    grunt.registerTask('test', ['jshint']);
-    grunt.registerTask('build', ['requirejs:desktopJS', 'requirejs:desktopCSS']);
-    grunt.registerTask('default', ['test', 'build']);
+    grunt.registerTask('build', ['requirejs:dist']);
+    grunt.registerTask('dev', ['requirejs:dev']);
+    grunt.registerTask('default', ['build']);
 };
