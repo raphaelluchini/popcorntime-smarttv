@@ -20,6 +20,10 @@ define( ['App', 'jquery', 'backbone', 'marionette', 'hbs!templates/sidebar'],
                 }
             },
 
+            serializeData:function(){
+                return _.extend({}, this.model.attributes, App.currentJsonLocale);
+            },
+
             show: function() {
                 this.$el.removeClass('hidden');
 

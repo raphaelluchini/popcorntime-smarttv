@@ -1,5 +1,6 @@
-define(['jquery', 'backbone', 'marionette', 'underscore', 'handlebars', 'providers/Scrapers'],
-    function ($, Backbone, Marionette, _, Handlebars, Scrapers) {
+define(['jquery', 'backbone', 'marionette', 'underscore', 'providers/Scrapers'],
+    function ($, Backbone, Marionette, _, Scrapers) {
+
         var App = new Backbone.Marionette.Application();
         App.views = {};
         App.Scrapers = new Scrapers([], {
