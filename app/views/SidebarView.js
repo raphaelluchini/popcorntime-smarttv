@@ -14,8 +14,14 @@ define( ['App', 'jquery', 'backbone', 'marionette', 'hbs!templates/sidebar'],
                 this.model = App.Scrapers.get(options.currentMovie);
                 if(!this.model){
                     this.$el.addClass('hidden');
-                    window.location = '#/';
+                    Backbone.history.navigate("#/");
+                }else{
+                    this.show();
                 }
+            },
+
+            serializeData:function(){
+                return _.extend({}, this.model.attributes, App.currentJsonLocale);
             },
 
             show: function() {
@@ -37,7 +43,7 @@ define( ['App', 'jquery', 'backbone', 'marionette', 'hbs!templates/sidebar'],
                     this.backdropCache.src = null;
                 }
 
-                window.location = "/#";
+                Backbone.history.navigate("#/");
             },
 
             enableHD: function (evt) {

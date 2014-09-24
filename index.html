@@ -6,7 +6,11 @@
 
     <title>Popcorn time SmartTv</title>
     <meta name="viewport" content="user-scalable=no, initial-scale=1.0, maximum-scale=1.0, width=device-width">
-    <script src="//cdnjs.cloudflare.com/ajax/libs/URI.js/1.7.2/URI.min.js"></script>
+    <script type="text/javascript" language="javascript" src="$MANAGER_WIDGET/Common/API/Widget.js"></script>
+	<script type="text/javascript" language="javascript" src="$MANAGER_WIDGET/Common/API/TVKeyValue.js"></script>
+	<script src="$CAPH/1.0.0/caph-level1-unified.min.js"></script>
+	<script language="javascript" type="text/javascript" src="assets/Main.js"></script>
+    
     <script>
         //temporary hack to avoid i18n
         var i18n = function(){
@@ -16,13 +20,13 @@
         }();
     </script>
 
-    <link rel="stylesheet" href="css/animations.css">
-    <link rel="stylesheet" href="css/app.css">
-    <link rel="stylesheet" href="css/font-awesome.min.css">
-    <script src="optimized.min.js"></script>
+    <link rel="stylesheet" href="assets/css/animations.css">
+    <link rel="stylesheet" href="assets/css/app.css">
+    <link rel="stylesheet" href="assets/css/font-awesome.min.css">
+    <script src="assets/optimized.min.js"></script>
 </head>
-<body>
-
+<body onload="Main.onLoad();">
+<a href="javascript:void(0);" id="anchor" onkeydown="Main.keyDown();"></a>
 <div data-role="page">
 
     <div class="popcorn-load">
@@ -34,7 +38,7 @@
       </div>
     </div>
 
-    <header id="header"><h1>Popcorn Time</h1></header>
+    <header id="header"></header>
     <div id="catalog-select"></div>
     <section id="main" class="container"></section>
     <section id="sidebar"></section>

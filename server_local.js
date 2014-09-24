@@ -1,33 +1,8 @@
-// DEPENDENCIES
-// ============
-var express = require("express"),
-    http = require("http"),
-    port = (process.env.PORT || 8001),
-    server = module.exports = express();
+var express = require('express');
+var app = express();
+var port = process.env.PORT || 8001;
 
-// SERVER CONFIGURATION
-// ====================
-server.configure(function () {
-
-    server.use(express["static"](__dirname + "/public"));
-
-    server.use(express.errorHandler({
-
-        dumpExceptions:true,
-
-        showStack:true
-
-    }));
-
-    server.use(express.bodyParser());
-
-    server.use(server.router);
-});
-
-// SERVER
-// ======
-
-// Start Node.js Server
-http.createServer(server).listen(port);
+app.use(express.static(__dirname + "/"));
+app.listen(port);
 
 console.log('Please go to http://localhost:' + port + ' to test your popcorntime');

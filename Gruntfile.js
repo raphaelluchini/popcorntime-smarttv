@@ -4,43 +4,26 @@ module.exports = function(grunt) {
         requirejs: {
             dist: {
                 options: {
-                    baseUrl: "src/js/app",
-                    optimize: "uglify2",
-                    preserveLicenseComments : false,
-                    inlineText : true,
-                    findNestedDependencies : true,
-                    mainConfigFile: "src/js/config/config.js",
-                    paths : {
-                      requireLib : '../libs/require'
-                   },
-                    include: [
-                        'requireLib',
-                        "../AppInit"
-                    ],
-                    out: "public/optimized.min.js"
-                }
-            },
-            dev: {
-                options: {
-                    baseUrl: "src/js/app",
+                    baseUrl: "app",
                     optimize: "none",
                     preserveLicenseComments : false,
                     inlineText : true,
                     findNestedDependencies : true,
-                    mainConfigFile: "src/js/config/config.js",
+                    mainConfigFile: "app/config/config.js",
                     paths : {
                       requireLib : '../libs/require'
-                   },
+                    },
                     include: [
+                        '../libs/URI.min.js',
                         'requireLib',
-                        "../AppInit"
+                        "AppInit"
                     ],
-                    out: "public/optimized.min.js"
+                    out: "assets/optimized.min.js"
                 }
             }
         },
         jshint: {
-            files: ['Gruntfile.js', 'src/js/app/**/*.js', '!src/js/libs/**/*.js', '!./**/*min.js'],
+            files: ['Gruntfile.js', 'app/**/*.js', '!libs/**/*.js', '!./**/*min.js'],
             options: {
                 evil: false,
                 regexdash: true,
@@ -59,7 +42,7 @@ module.exports = function(grunt) {
         },
         watch: {
           scripts: {
-            files: ['src/js/**/*.js'],
+            files: ['app/**/*.js'],
             tasks: ['dev'],
             options: {
               spawn: false
@@ -71,6 +54,5 @@ module.exports = function(grunt) {
     grunt.loadNpmTasks('grunt-contrib-jshint');
     grunt.loadNpmTasks('grunt-contrib-requirejs');
     grunt.registerTask('build', ['jshint', 'requirejs:dist']);
-    grunt.registerTask('dev', ['jshint', 'requirejs:dev']);
     grunt.registerTask('default', ['build']);
 };
