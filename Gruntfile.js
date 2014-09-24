@@ -5,24 +5,6 @@ module.exports = function(grunt) {
             dist: {
                 options: {
                     baseUrl: "src/js/app",
-                    optimize: "uglify2",
-                    preserveLicenseComments : false,
-                    inlineText : true,
-                    findNestedDependencies : true,
-                    mainConfigFile: "src/js/config/config.js",
-                    paths : {
-                      requireLib : '../libs/require'
-                   },
-                    include: [
-                        'requireLib',
-                        "../AppInit"
-                    ],
-                    out: "public/optimized.min.js"
-                }
-            },
-            dev: {
-                options: {
-                    baseUrl: "src/js/app",
                     optimize: "none",
                     preserveLicenseComments : false,
                     inlineText : true,
@@ -35,7 +17,7 @@ module.exports = function(grunt) {
                         'requireLib',
                         "../AppInit"
                     ],
-                    out: "public/optimized.min.js"
+                    out: "assets/optimized.min.js"
                 }
             }
         },
@@ -71,6 +53,5 @@ module.exports = function(grunt) {
     grunt.loadNpmTasks('grunt-contrib-jshint');
     grunt.loadNpmTasks('grunt-contrib-requirejs');
     grunt.registerTask('build', ['jshint', 'requirejs:dist']);
-    grunt.registerTask('dev', ['jshint', 'requirejs:dev']);
     grunt.registerTask('default', ['build']);
 };
