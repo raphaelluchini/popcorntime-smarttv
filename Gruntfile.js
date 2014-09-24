@@ -12,12 +12,11 @@ module.exports = function(grunt) {
                     mainConfigFile: "app/config/config.js",
                     paths : {
                       requireLib : '../libs/require'
-                   },
+                    },
                     include: [
                         '../libs/URI.min.js',
                         'requireLib',
-                        "AppInit",
-                        '../libs/Main.js'
+                        "AppInit"
                     ],
                     out: "assets/optimized.min.js"
                 }
