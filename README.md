@@ -29,7 +29,7 @@ For the best UX and performace for smartvs we need a very organized and clean co
 #Dev TODOS
 
 - Server code refactor
-- Add i8n support
+- Add i8n support(Done)
 - Add Subtitles
 - Performace improvements
 - Auto/Manual node server selector using UI elements
