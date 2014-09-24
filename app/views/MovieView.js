@@ -1,10 +1,10 @@
-define(['jquery', 'underscore', 'hbs!templates/catalogMovieView', 'backbone', 'marionette'],
-    function ($, _, template, Backbone, Marionette) {
+define(['App','jquery', 'underscore', 'hbs!templates/catalogMovieView', 'backbone', 'marionette'],
+    function (App, $, _, template, Backbone, Marionette) {
         return Backbone.Marionette.ItemView.extend({
             tagName: 'li',
             template: template,
             events:{
-                'click this':this.select
+                'click a': 'select'
             },
             serializeData:function(){
                 return _.extend({}, this.model.attributes, {
@@ -13,7 +13,7 @@ define(['jquery', 'underscore', 'hbs!templates/catalogMovieView', 'backbone', 'm
             },
             select: function (event) {
                 event.preventDefault();
-                App.views.sidebar.show();
+                Backbone.history.navigate("#/details/" + this.model.get('imdb'));
             }
         });
     }

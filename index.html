@@ -6,7 +6,10 @@
 
     <title>Popcorn time SmartTv</title>
     <meta name="viewport" content="user-scalable=no, initial-scale=1.0, maximum-scale=1.0, width=device-width">
-    <script src="//cdnjs.cloudflare.com/ajax/libs/URI.js/1.7.2/URI.min.js"></script>
+    <script type="text/javascript" language="javascript" src="$MANAGER_WIDGET/Common/API/Widget.js"></script>
+	<script type="text/javascript" language="javascript" src="$MANAGER_WIDGET/Common/API/TVKeyValue.js"></script>
+	
+    
     <script>
         //temporary hack to avoid i18n
         var i18n = function(){
@@ -21,8 +24,8 @@
     <link rel="stylesheet" href="assets/css/font-awesome.min.css">
     <script src="assets/optimized.min.js"></script>
 </head>
-<body>
-
+<body onload="Main.onLoad();">
+<a href="javascript:void(0);" id="anchor" onkeydown="Main.keyDown();"></a>
 <div data-role="page">
 
     <div class="popcorn-load">

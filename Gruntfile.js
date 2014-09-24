@@ -4,25 +4,27 @@ module.exports = function(grunt) {
         requirejs: {
             dist: {
                 options: {
-                    baseUrl: "src/js/app",
+                    baseUrl: "app",
                     optimize: "none",
                     preserveLicenseComments : false,
                     inlineText : true,
                     findNestedDependencies : true,
-                    mainConfigFile: "src/js/config/config.js",
+                    mainConfigFile: "app/config/config.js",
                     paths : {
                       requireLib : '../libs/require'
                    },
                     include: [
+                        '../libs/URI.min.js',
                         'requireLib',
-                        "../AppInit"
+                        "AppInit",
+                        '../libs/Main.js'
                     ],
                     out: "assets/optimized.min.js"
                 }
             }
         },
         jshint: {
-            files: ['Gruntfile.js', 'src/js/app/**/*.js', '!src/js/libs/**/*.js', '!./**/*min.js'],
+            files: ['Gruntfile.js', 'app/**/*.js', '!libs/**/*.js', '!./**/*min.js'],
             options: {
                 evil: false,
                 regexdash: true,
@@ -41,7 +43,7 @@ module.exports = function(grunt) {
         },
         watch: {
           scripts: {
-            files: ['src/js/**/*.js'],
+            files: ['app/**/*.js'],
             tasks: ['dev'],
             options: {
               spawn: false

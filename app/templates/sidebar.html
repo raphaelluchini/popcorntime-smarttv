@@ -42,7 +42,7 @@
             {{#if resumetime}}
               <span class="duration">{{runtime}} - {{resumetime}}m left</span>
             {{else}}
-              <span class="duration">{{runtime}} <%= i18n.__('durationUnit') %></span>
+              <span class="duration">{{runtime}} {{$ durationUnit}}</span>
             {{/if}}
           </li>
         </ul>
@@ -71,7 +71,7 @@
 
       <div class="subtitles-list">
       {{#if subtitles}}
-        <h4><%= i18n.__('subtitledIn') %></h4>
+        <h4>{{$ subtitledIn}}</h4>
         <ul>
             <li>
               {{#each subtitles}}
