@@ -12,7 +12,7 @@
         <ul class="movie-config">
         {{#if quality}}
           <li class="options quality-cont">
-            <h4><%= i18n.__('quality') %></h4>
+            <h4>{{quality}}</h4>
             {{#unless hasSDAndHD}}
               <div class="quality switch white">
                 <input type="radio" name="switch" id="switch-off"{{#if is720p}} checked {{/if}}>
@@ -42,7 +42,7 @@
             {{#if resumetime}}
               <span class="duration">{{runtime}} - {{resumetime}}m left</span>
             {{else}}
-              <span class="duration">{{runtime}} <%= i18n.__('durationUnit') %></span>
+              <span class="duration">{{runtime}} {{durationUnit}}</span>
             {{/if}}
           </li>
         </ul>
@@ -71,7 +71,7 @@
 
       <div class="subtitles-list">
       {{#if subtitles}}
-        <h4><%= i18n.__('subtitledIn') %></h4>
+        <h4>{{subtitledIn}}</h4>
         <ul>
             <li>
               {{#each subtitles}}
@@ -83,7 +83,7 @@
       </div>
 
       {{#if torrents}}
-        <a href="#/player/{{imdb}}" class="p_tooltip play-button"><%= i18n.__('watchItNow') %></a>
+        <a href="#/player/{{imdb}}" class="p_tooltip play-button">{{watchItNow}}</a>
       {{/if}}
     </div>
   </div>

@@ -3,14 +3,19 @@ define( ['App', 'backbone', 'marionette', 'jquery', 'models/Model', 'hbs!templat
         //ItemView provides some default rendering logic
         return Backbone.Marionette.ItemView.extend( {
             template: template,
-            model: new Model({
-                defaultGenere:'All',
-                generes:['All']
-            }),
+            
+            initialize:function(){
+                this.model = new Model({
+                    genres:App.currentJsonLocale.genres
+                });
+            },
 
             // View Event Handlers
             events: {
 
+            },
+            serializeData:function(){
+                return _.extend({}, this.model.attributes, App.currentJsonLocale);
             }
         });
     });

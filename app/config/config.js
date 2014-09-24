@@ -1,5 +1,5 @@
-require.config({
-    baseUrl:"./js/app",
+    require.config({
+    baseUrl:"./app",
     // 3rd party script alias names (Easier to type "jquery" than "libs/jquery, etc")
     // probably a good idea to keep version numbers in the file names for updates checking
     paths:{
@@ -8,10 +8,7 @@ require.config({
         "underscore":"../libs/lodash",
         "backbone":"../libs/backbone",
         "marionette":"../libs/backbone.marionette",
-        "handlebars":"../libs/handlebars",
-        "hbs":"../libs/hbs",
-        "i18nprecompile":"../libs/i18nprecompile",
-        "json2":"../libs/json2",
+        "hbs":"../libs/require-handlebars-plugin/hbs",
         "Q":"../libs/q",
         'URI': '../libs/URI',
         'async': '../libs/async',
@@ -33,17 +30,13 @@ require.config({
         "marionette":{
             "deps":["underscore", "backbone", "jquery"],
             "exports":"Marionette"
-        },
-        //Handlebars
-        "handlebars":{
-            "exports":"Handlebars"
         }
     },
     // hbs config - must duplicate in Gruntfile.js Require build
     hbs: {
         templateExtension: "html",
         helperDirectory: "templates/helpers/",
-        i18nDirectory: "templates/i18n/",
+        i18n: false,
         compileOptions: {}        // options object which is passed to Handlebars compiler
     }
 });

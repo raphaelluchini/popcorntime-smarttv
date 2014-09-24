@@ -1,4 +1,4 @@
-define(['handlebars'], function ( Handlebars ){
+define(['!hbs/handlebars'], function ( Handlebars ){
     function pad(num, opts) {
       var digits = opts.digits || 3;
       if(opts.auto && typeof opts.auto === 'number') {
