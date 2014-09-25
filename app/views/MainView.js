@@ -5,5 +5,8 @@ define( ['App', 'backbone', 'marionette', 'jquery', 'hbs!templates/main', 'views
             childViewContainer:'#list',
             collection:App.Scrapers,
             childView:MovieView,
+            modelEvents: {
+                "sync": "render"
+            }
         });
     });

@@ -62,11 +62,16 @@
     // Hack to keep to cancel the request in case of new request
     var currentRequest = null;
     var Yts = Backbone.Collection.extend({
-        apiUrl:"https://yts.re/api/list.json?sort=seeds&limit=10",
+        apiUrl:"https://yts.re/api/list.json?sort=seeds&limit=30",
         model: Movie,
         movies: [],
 
-        initialize: function(models, options) {
+        initialize: function(options) {
+            this.createUrl(options);
+        },
+
+        createUrl:function(options){
+            if(!options) return;
             if (options.keywords) {
                 this.apiUrl += '&keywords=' + options.keywords;
             }
@@ -79,7 +84,7 @@
                 }
             }
 
-            if (options.page && options.page.match(/\d+/)) {
+            if (options.page) {
                 this.apiUrl += '&set=' + options.page;
             }
 
@@ -109,8 +114,11 @@
             }
         },
 
-        fetch: function() {
+        fetch: function(options) {
+            this.createUrl(options);
+
             var collection = this;
+            collection.trigger('loading');
 
             this.movies = [];
 
