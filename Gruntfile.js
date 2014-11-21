@@ -4,12 +4,12 @@ module.exports = function(grunt) {
         requirejs: {
             dist: {
                 options: {
-                    baseUrl: "app",
+                    baseUrl: "src/app",
                     optimize: "none",
                     preserveLicenseComments : false,
                     inlineText : true,
                     findNestedDependencies : true,
-                    mainConfigFile: "app/config/config.js",
+                    mainConfigFile: "src/app/config/config.js",
                     paths : {
                       requireLib : '../libs/require'
                     },
@@ -18,12 +18,12 @@ module.exports = function(grunt) {
                         'requireLib',
                         "AppInit"
                     ],
-                    out: "assets/optimized.min.js"
+                    out: "./dist/optimized.min.js"
                 }
             }
         },
         jshint: {
-            files: ['Gruntfile.js', 'app/**/*.js', '!libs/**/*.js', '!./**/*min.js'],
+            files: ['Gruntfile.js', 'src/app/**/*.js', '!src/libs/**/*.js', '!./**/*min.js'],
             options: {
                 evil: false,
                 regexdash: true,
@@ -42,17 +42,52 @@ module.exports = function(grunt) {
         },
         watch: {
           scripts: {
-            files: ['app/**/*.js'],
+            files: ['src/app/**/*.js'],
             tasks: ['build'],
             options: {
               spawn: false
             }
           }
-        }
+        },
+        samsung: {
+            default_options:{
+                options: {
+                  samsungApp:'./dist/'
+                }
+            }
+        },
+        sync: {
+          assets: {
+            files: [{
+              cwd: 'assets',
+              src: [
+                '**'
+              ],
+              dest: 'dist/assets',
+            }],
+              verbose: false
+          },
+          src: {
+            files: [{
+              cwd: 'src',
+              src: [
+                'index.html',
+                'config.xml',
+                'widget.info',
+                'Main.js'
+              ],
+              dest: 'dist/',
+            }],
+              verbose: false
+          },
+        },
     });
+    grunt.loadNpmTasks('grunt-sync');
     grunt.loadNpmTasks('grunt-contrib-watch');
+    grunt.loadNpmTasks('grunt-samsungstv-packager');
     grunt.loadNpmTasks('grunt-contrib-jshint');
     grunt.loadNpmTasks('grunt-contrib-requirejs');
-    grunt.registerTask('build', ['jshint', 'requirejs:dist']);
+    grunt.registerTask('deploy', ['samsung']);
+    grunt.registerTask('build', ['jshint', 'requirejs:dist', 'sync:assets', 'sync:src']);
     grunt.registerTask('default', ['build']);
 };
