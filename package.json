@@ -2,7 +2,7 @@
   "name": "PopcornTimeSmartTv",
   "title": "PopcornTime SmartTv",
   "description": "A fork of PopcornTime for Smarttvs",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "homepage": "https://github.com/raphaelluchini/popcorntime-smarttv",
   "author": {
     "name": "Raphael Luchini",
@@ -31,7 +31,7 @@
     "grunt-contrib-jshint": "~0.10.0",
     "grunt-contrib-requirejs": "~0.4.0",
     "grunt-contrib-watch": "^0.6.1",
-    "grunt-samsungstv-packager": "0.0.3"
+    "grunt-samsungstv-packager": "~0.0.4"
   },
   "keywords": [
     "Marionette.js",
