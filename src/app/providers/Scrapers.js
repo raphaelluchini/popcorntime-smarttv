@@ -62,7 +62,7 @@
     // Hack to keep to cancel the request in case of new request
     var currentRequest = null;
     var Yts = Backbone.Collection.extend({
-        apiUrl:"https://yts.re/api/list.json?sort=seeds&limit=30",
+        apiUrl:"https://yts.to/api/list.json?sort=seeds&limit=30",
         model: Movie,
         movies: [],
 
