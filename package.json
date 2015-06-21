@@ -21,17 +21,16 @@
       "url": "https://github.com/BoilerplateMVC/Marionette-Require-Boilerplate/blob/master/LICENSE-MIT"
     }
   ],
-  "dependencies": {
-    
-  },
+  "dependencies": {},
   "devDependencies": {
-    "grunt-sync": "^0.2.1",
     "express": "3.x",
     "grunt": "~0.4.1",
     "grunt-contrib-jshint": "~0.10.0",
     "grunt-contrib-requirejs": "~0.4.0",
     "grunt-contrib-watch": "^0.6.1",
-    "grunt-samsungstv-packager": "~0.0.4"
+    "grunt-express-server": "^0.4.19",
+    "grunt-samsungstv-packager": "~0.0.4",
+    "grunt-sync": "^0.2.1"
   },
   "keywords": [
     "Marionette.js",
